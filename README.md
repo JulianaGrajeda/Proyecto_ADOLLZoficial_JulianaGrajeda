@@ -1,5 +1,5 @@
 ﻿# Proyecto Adollz Oficial - Talento Tech
-![Banner de las integrantes de la banda que inspiró este proyeto. Adollz](	/../main/img/banner.png)
+![Banner de las integrantes de la banda que inspiró este proyeto. Adollz](img/banner.png)
 ## Desarrollador/a
 - Juliana Gimena Grajeda | grajedajulianagimena+academico@gmail.com
 ## Información del Curso
