@@ -14,9 +14,24 @@ Este proyecto es una página web para el grupo musical argentino "Adollz". Este 
 interactivo donde los fanáticos puedan acceder al contenido oficial de la banda, incluyendo:
 
 - **Sección Multimedia:** Acceso directo a sus videos musicales.
+
+![Imagen de la sección multimedia de la página](assets/multimediasection.png)
+
 - **Discografía:** Espacio dedicado a la presentación de su mini álbum.
+
+![Imagen de la sección multimedia de la página](assets/discografia.png)
+
 - **Comunidad & Redes:** Enlaces a todas sus redes sociales oficiales.
 - **Tienda(Merch):** Una sección de Merchandising exclusivo diseñado y desarrollado por mi para simular la experiencia de una tienda oficial de la banda.
+
+![Imagen de la sección multimedia de la página](assets/merchsection.png)
+
+
+![Imagen de la sección multimedia de la página](assets/merchbanner.png)
+
+
+![Imagen de la sección multimedia de la página](assets/merchslidder.png)
+
 
 ## Tecnologías Utilizadas
 - HTML5
