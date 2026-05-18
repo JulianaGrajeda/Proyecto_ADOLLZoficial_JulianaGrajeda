@@ -1,6 +1,6 @@
 ﻿# Proyecto Adollz Oficial - Talento Tech
 
-![Logo de Adollz](img/logo_blanco.png)
+![Logo de Adollz](img/bannerdollz.png)
 
  
 ![Banner de las integrantes de la banda que inspiró este proyeto. Adollz](img/banner.png)
