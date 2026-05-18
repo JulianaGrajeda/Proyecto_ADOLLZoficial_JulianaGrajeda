@@ -1,0 +1,834 @@
+
+/* RESET */
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    align-items: center;
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.logo-container img{
+    width: 140px;
+    height: auto;
+    padding: 10px 10px;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    font-family: 'Playfair Display', serif;
+    width: 100%;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 35px;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.item-bar{
+    transition: 0.3s;
+}
+
+.item-bar:hover{
+    color: black;
+    transform: scale(1.1);
+}
+
+/* HERO */
+
+.hero-content{
+    height: 100vh;
+    width: 100%;
+    background-image: url('../img/portada.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* BANDA */
+
+.banda-section{
+    background: linear-gradient(to top, #333333, white);
+    position: relative;
+    padding: 80px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banda-content{
+    
+}
+
+.cards img{
+    width: 350px;
+    transition: 0.6s ease;
+}
+
+.cards img:hover{
+    transform: scale(1.1);
+    
+}
+
+/* EP */
+
+.ep-section{
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
+    align-items: center;
+    padding: 80px 0;
+}
+
+.ep-main-logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.ep-main-logo img{
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+}
+
+.tracklist-container{
+    align-items: center;
+    flex-direction: column;
+    display:flex;
+    gap: 40px;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.track-item{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    transition: 0.3s;
+
+    /* animación */
+    view-timeline-name: --revelar;
+    view-timeline-axis: block;
+
+    animation-name: aparecer;
+    animation-fill-mode: both;
+
+    animation-timeline: --revelar;
+    animation-range: entry 10% cover 30%;
+}
+
+.track-info{
+    display: flex;
+    align-items: center;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    gap: 20px;
+}
+
+.track-info img{
+    width: 70px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.track-play-icon{
+    width: 60px;
+    font-size: 50px;
+    margin-right: 10px;
+}
+
+.track-details{
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.track-info h3{
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+.track-info .track-artist{
+    font-size: 15px;
+    font-weight: normal;
+    color: #ccc;
+}
+
+.track-info .track-duration{
+    font-size: 16px;
+    margin-top: 8px;
+    color: #999;
+}
+
+.track-item:hover .track-play-icon{
+    color: #000000;
+}
+
+.track-item:hover{
+    background-color: #666666;
+}
+
+
+/* VIDEOS */
+
+.videos-content{
+    position: relative;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
+    padding: 80px 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.videos-slider{    
+    display: flex;
+    background-color: #333333;
+    padding: 80px 10%;
+    align-items: center;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    scrollbar-width: none;
+}
+
+.videos-slider::-webkit-scrollbar {
+    display: none;
+}
+
+.videos-slider::before {
+    content: '';
+    flex: 0 0 10%;
+    height: 1px;
+}
+
+.videos-slider::after {
+    content: '';
+    flex: 0 0 10%;
+    height: 1px;
+}
+
+.video-card{
+    flex: 0 0 80%;
+    display: flex;
+    align-items: center;
+    scroll-snap-align: center;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.video-wrapper{
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16/9;
+    background: #000000;
+    border: 2px solid #555;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-wrapper iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.video-card h3{
+    font-family: 'Bondoni FLF', serif;
+    color: white;
+    font-size: 20px;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.video-nav-arrows{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 0;
+    padding: 0 20px;
+}
+
+.video-nav-arrows a{
+    pointer-events: auto;
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* MERCH APARTADO */
+
+.merch-content{
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.merch-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 80px;
+    justify-content: center;
+    align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.merch-item{
+    background-color: #ffffff;
+    text-align: center;
+    padding: 20px 40px;
+    font-family: 'Bodoni FLF';
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.6);
+    transition: 0.6s;
+}
+
+.merch-info h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.merch-info p{
+    font-size: 16px;
+    color: #7a7a7a;
+}
+
+.merch-item a{
+    background: #262525;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: 0.4s;
+}
+
+.merch-item:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 20px 40px rgba(0,0,0,0.8);
+}
+
+.merch-item img{
+    width: 300px;
+    height: auto;
+}
+
+.merch-item a:hover{
+    background: #f1297c;
+}
+
+.linea-horizontal{
+    width: 40%;
+    height: 5px;
+    background-color: #f1297c;
+    margin: 80px;
+    border: none;
+    text-align: center;
+}
+
+/* MODALS */
+
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-overlay:target{
+    display: flex;
+}
+
+.modal-content{
+    background: linear-gradient(to bottom, #fefeff, #b0b0b0);
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.spotify-embed{
+    padding-top: 15px;
+}
+
+.close-modal{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    color: #333333;
+}
+
+.lyrics-container{
+    margin-top: 20px;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.lyrics-container h3{
+    font-family: 'Franklin Gothic';
+    color: #444;
+    font-weight: normal;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.lyrics-scroll p{
+    text-align: left;
+    margin-bottom: 15px;
+    font-family: 'Franklin Gothic';
+    font-size: 16px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.lyrics-scroll{
+    overflow-y: auto;
+    padding-right: 10px;
+    line-height: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: #8a8a8a #ababab;
+}
+
+.lyrics-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.lyrics-scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform: scale(0.6);
+        box-shadow: 0 0px 0px rgba(0,0,0,0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+}
+
+/* FORMULARIO SUSCRIPCIÓN */
+
+/* Botón y ventana */
+.subscribe-button{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #737272;
+    padding: 20px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: background-color 0.3s;
+}
+
+.subscribe-button img{
+    width: 150px;
+}
+
+.subscribe-button:hover{
+    background-color: #9d9d9d;
+}
+
+/* Ventana */
+.modal-overlay-subscribe{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-content-subscribe{
+    background: linear-gradient(to bottom, #262525, #afafaf);
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.2);
+}
+
+.close-button-subscribe{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.subscribe-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-logo-subscribe{
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.modal-content-subscribe h3{
+    font-family: 'Bodoni FLF';
+    margin-bottom: 30px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.modal-content-subscribe button{
+    font-family: 'Bodoni FLF';
+    font-size: 20px;
+    background-color: #363535;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 15px;
+    margin-top: 15px;
+    max-width: 150px;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s;
+}
+
+.modal-content-subscribe button:hover{
+    background-color: #585757;
+}
+
+.modal-overlay-subscribe.open{
+    opacity: 1;
+    visibility: visible;
+}
+
+/*FORMULARIOS*/
+
+.form-group{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.form-group label{
+    font-family: 'Bodoni FLF';
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.form-group span{
+    color: black;
+    font-size: 20px;
+}
+
+.form-group input{
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.success-message h3{
+    color: white;
+    font-family: 'Bodoni FLF';
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.success-content-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 300px;
+    height: auto;
+    padding: 40px 20px;
+
+}
+
+.modal-logo-success{
+    width: 280px;
+    max-width: 90%;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+/* país */
+.form-group select{
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* SUBIR BOTÓN */
+
+.btn-subir{
+    background-color: #262525;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 9px;
+    position: fixed;
+    bottom: 15px;
+    transition: 0.5s ease;
+}
+
+.btn-subir i{
+    font-size: 20px;
+    color: white;
+}
+
+.btn-subir:hover{
+    background-color: #f1297c;
+    transform: translateY(-3px);
+}
+
+/* FOOTER */
+
+.footer{
+    background-color: black;
+    color: white;
+    padding: 30px 0;
+    width: 100%;
+    position: relative;
+}
+
+.footer-content{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-top{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.footer-logo-wrapper{
+    position: absolute;
+    left: 70px;
+    top: 30px;
+    display: flex;
+}
+
+.footer-logo-wrapper img{
+    width: 150px;
+    height: auto;
+}
+
+.nav-footer {
+    display: flex;
+    justify-content: center;
+    flex: 2;
+}
+
+.nav-footer ul{
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    padding: 0;
+    margin: 0;
+}
+
+.item-footer{
+    color: white;
+    text-decoration: none;
+    font-family: 'Bebas Neue';
+    font-size: 28px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.item-footer:hover{
+    color: #f1297c;
+}
+
+.linea-footer{
+    border: 0;
+    height: 2px;
+    background-color: #f1297c;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.footer-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.copyright{
+    font-family: 'Times New Roman';
+    font-size: 13px;
+    color: #ffffff;
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    padding-left: 200px;
+}
+
+.social-icons{
+    display: flex;
+    gap: 18px;
+    justify-content: flex-end;
+    flex: 0 0 auto;
+}
+
+.social-icons a i{
+    color: white;
+    font-size: 25px;
+    transition: 0.6s ease;
+}
+
+.social-icons a i:hover{
+    color: #f1297c;
+    transform: scale(1.2);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 768px){
+    .header-content{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav ul{
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav a{
+        font-size: 22px;
+    }
+
+    .track-item{
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .form-row-date{
+        flex-direction: column;
+    }
+
+}
