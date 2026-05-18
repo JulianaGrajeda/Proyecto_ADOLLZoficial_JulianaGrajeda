@@ -25,17 +25,17 @@ interactivo donde los fanáticos puedan acceder al contenido oficial de la banda
 
 - **Discografía:** Espacio dedicado a la presentación de su mini álbum.
 
-![Imagen de la sección multimedia de la página](assets/discografia.png)
+![Imagen de la sección videos de la página](assets/discografia.png)
 
 - **Tienda(Merch):** Una sección de Merchandising exclusivo diseñado y desarrollado por mi para simular la experiencia de una tienda oficial de la banda.
 
-![Imagen de la sección multimedia de la página](assets/merchsection.png)
+![Imagen de la sección merch de la página principal](assets/merchsection.png)
 
 
-![Imagen de la sección multimedia de la página](assets/merchbanner.png)
+![Imagen de la página merch](assets/merchbanner.png)
 
 
-![Imagen de la sección multimedia de la página](assets/merchslidder.png)
+![Imagen de la sección merchslidder de la página merch](assets/merchslidder.png)
 
 
 ## 🛠️ Tecnologías Utilizadas
