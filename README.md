@@ -2,8 +2,6 @@
 
 ![Logo de Adollz](assets/bannerdollz.png)
 
- 
-![Banner de las integrantes de la banda que inspiró este proyeto. Adollz](img/banner.png)
 ## Desarrollador/a
 - Juliana Gimena Grajeda | grajedajulianagimena+academico@gmail.com
 ## Información del Curso
@@ -18,6 +16,8 @@ Este proyecto es una página web para el grupo musical argentino "Adollz". Este 
 interactivo donde los fanáticos puedan acceder al contenido oficial de la banda, incluyendo:
 
 - **Comunidad & Redes:** Enlaces a todas sus redes sociales oficiales.
+
+ ![Banner de las integrantes de la banda que inspiró este proyeto. Adollz](img/banner.png)
   
 - **Sección Multimedia:** Acceso directo a sus videos musicales.
 
