@@ -1,7 +1,7 @@
 ﻿# Proyecto Adollz Oficial - Talento Tech
 ![Banner de las integrantes de la banda que inspiró este proyeto. Adollz](	/../main/img/banner.png)
 ## Desarrollador/a
-- Juliana Gimena Grajeda
+- Juliana Gimena Grajeda | grajedajulianagimena+academico@gmail.com
 ## Información del Curso
 ### Turno
 - Talento Tec, clase de los Martes y Jueves. Turno noche (19 a 21hs).
