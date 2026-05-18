@@ -10,5 +10,10 @@
 - **Tutora**: Érica Sosa | erica.sosa@bue.edu.ar
 ## Información del Proyecto
 ### Descripción
-Este proyecto es una página web para el grupo musical argentino "Adollz". Este sitio busca ser un espacio <br>
-interactivo para los fanáticos
+Este proyecto es una página web para el grupo musical argentino "Adollz". Este sitio fue pensado y desarrollado desde cero en busca de ser un espacio <br>
+interactivo donde los fanáticos puedan acceder al contenido oficial de la banda, incluyendo:
+
+-**Sección Multimedia:** Acceso directo a sus videos musicales.
+-**Discografía:** Espacio dedicado a la presentación de su mini álbum.
+-**Comunidad & Redes:** Enlaces a todas sus redes sociales oficiales.
+-****
