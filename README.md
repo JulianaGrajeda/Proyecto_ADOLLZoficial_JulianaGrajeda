@@ -19,7 +19,7 @@ interactivo donde los fanáticos puedan acceder al contenido oficial de la banda
 
 - **Comunidad & Redes:** Enlaces a todas sus redes sociales oficiales.
 
- ![Imagen de la sección banda de la página](img/bandasection.png)
+ ![Imagen de la sección banda de la página](assets/bandasection.png)
   
 - **Sección Multimedia:** Acceso directo a sus videos musicales.
 
