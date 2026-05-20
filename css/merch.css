@@ -332,6 +332,12 @@ nav{
 .remeras-item img{
     width: 200px;
     height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+#remeras, #hoodies, #accesorios{
+    scroll-margin-top: 60px;
 }
 
 /* HOODIES SECTION */
@@ -421,6 +427,8 @@ nav{
 .hoodies-item img{
     width: 200px;
     height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 /* accesorios SECTION */
@@ -510,6 +518,8 @@ nav{
 .accesorios-item img{
     width: 200px;
     height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 /* flechas */

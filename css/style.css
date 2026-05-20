@@ -85,7 +85,7 @@ html{
 /* BANDA */
 
 .banda-section{
-    background: radial-gradient(circle, rgb(255, 255, 255) 0%, #000000 100%);
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
     align-items: center;
     padding: 80px 0;
     width: 100%;
