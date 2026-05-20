@@ -1,6 +1,6 @@
 ﻿# 💫 [Proyecto Adollz Oficial - Talento Tech](https://julianagrajeda.github.io/Proyecto_ADOLLZoficial_JulianaGrajeda/index.html)
 
-![Logo de Adollz](assets/bannerdollz.png)
+![Banner de la banda](assets/bannerdollz.png)
 
 ## 💻 Desarrollador/a
 - Juliana Gimena Grajeda | grajedajulianagimena+academico@gmail.com
@@ -13,9 +13,13 @@
 ## ⚙️ Información del Proyecto
 ### Descripción
 Este proyecto es una página web para el grupo musical argentino "Adollz". Este sitio fue pensado y desarrollado desde cero en busca de ser un espacio
-interactivo donde los fanáticos puedan acceder al contenido oficial de la banda, incluyendo:
+interactivo donde los fanáticos puedan acceder al contenido oficial de la banda.
+
+### Concept del diseño de la página
 
 ![Concept de la página](assets/concept.png)
+
+### Secciones que puedes encontrar en el diseño final
 
 - **Comunidad & Redes:** Enlaces a todas sus redes sociales oficiales.
 
