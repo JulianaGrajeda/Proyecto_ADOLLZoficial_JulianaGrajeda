@@ -85,64 +85,71 @@ html{
 /* BANDA */
 
 .banda-section{
-    background: linear-gradient(to top, #333333, white);
-    position: relative;
+    background: radial-gradient(circle, rgb(255, 255, 255) 0%, #000000 100%);
+    align-items: center;
     padding: 80px 0;
     width: 100%;
-    overflow: hidden;
 }
 
-.cards {
+.card-container{
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
-    /* max-width: 1200px; */
-    margin: 0 auto;
+    min-height: 100vh;
+    padding: 40px 10px;
+
+    width: 100%;
+    max-width: 100%;
 }
 
 .card-item{
-    background-color: transparent;
-    width: 350px;
-    height: 500px;
-    perspective: 1000px;
-}
-
-.card-inner{
     position: relative;
     width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    transform-style: preserve-3d;
+    max-width: 320px;
+    aspect-ratio: 350 / 510;
 }
 
-.card-item:hover .card-inner{
-    transform: rotateY(180deg);
-}
-.card-front, .card-back{
+.card-item .face{
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: 10px;
     overflow: hidden;
-    /* box-shadow: 0 4px 8px rgba(0,0,0, 0.2); */
+    transition: 0.8s;
+    top: 0;
+    left: 0;
 }
 
-.card-front img, .card-back .back-bg-img{
+.card-item .card-front{
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.card-item .card-front img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.card-item .card-back img{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    z-index: 1;
 }
 
-.card-front{
-    z-index: 2;
-}
-
-.card-back{
-    transform: rotateY(180deg);
+.card-item .card-back{
+    transform: perspective(600px) rotateY(180deg);
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-icons{
@@ -157,6 +164,7 @@ html{
     width: 100%;
     height: 100%;
     z-index: 10;
+    background: transparent;
 }
 
 .card-icons a{
@@ -167,8 +175,16 @@ html{
 }
 
 .card-icons a:hover{
-    color: #f1297c;
+    color: black;
     transform: scale(1.2);
+}
+
+.card-item:hover .card-front{
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card-item:hover .card-back{
+    transform: perspective(600px) rotateY(360deg);
 }
 
 /* EP */
