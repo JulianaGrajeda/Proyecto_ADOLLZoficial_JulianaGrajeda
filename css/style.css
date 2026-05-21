@@ -525,6 +525,56 @@ html{
     text-align: center;
 }
 
+/* CAROUSEL INFINITO */
+
+.image-carousel-section{
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
+    width: 100%;
+    display: flex;
+}
+
+.image-carousel{
+    margin: 100px auto;
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    gap: 1em;
+}
+
+.image-carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 120s infinite linear;
+    padding-right: 1em;
+}
+
+.group .image-card{
+    flex: 0 0 5em;
+    width: 100%;
+    background: #000000;
+    border: 4px solid #b3b3b3;
+    border-radius: 8px;
+}
+
+.group .image-card img{
+    width: 1250px;
+    max-height: 640px;
+    display: block;
+}
+
+@keyframes spin{
+    from {translate: 0;}
+    to {translate: -100%;}
+}
+
+
+
 /* MODALS */
 
 .modal-overlay{
@@ -625,51 +675,6 @@ html{
         box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 }
-
-/* CAROUSEL INFINITO */
-
-.image-carousel-section{
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
-    width: 100%;
-    display: flex;
-}
-
-.image-carousel{
-    margin: 100px auto;
-    width: 90%;
-    display: flex;
-    overflow-x: auto;
-    gap: 1em;
-}
-
-.image-carousel::-webkit-scrollbar{
-    display: none;
-}
-
-.group{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-    animation: spin 120s infinite linear;
-    padding-right: 1em;
-}
-
-.group .image-card{
-    flex: 0 0 5em;
-}
-
-.group .image-card img{
-    width: 1250px;
-    max-height: 650px;
-}
-
-@keyframes spin{
-    from {translate: 0;}
-    to {translate: -100%;}
-}
-
-
 
 /* FORMULARIO SUSCRIPCIÓN */
 
