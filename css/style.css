@@ -85,10 +85,60 @@ html{
 /* BANDA */
 
 .banda-section{
+    position: relative;
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
-    align-items: center;
     padding: 80px 0;
     width: 100%;
+    overflow: hidden;
+}
+
+.video-banda-container{
+    background-color: #111;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 0 80px;
+    align-items: center;
+    position: relative;
+    transition: 0.6s;
+    margin-bottom: 80px;
+}
+
+.video-banda-container:hover{
+    box-shadow: 
+        inset 0 0 150px rgba(0,0,0,0.9),
+        inset 0 0 60px rgba(255, 111, 171, 1.0);
+}
+
+.video-banda-box{
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16/9;
+    background: #000000;
+    border: 2px solid #555;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-banda-box iframe{
+    width: 100%;
+    height: 100%;
+}
+
+.video-banda-container .banda-titulo{
+    font-family: 'Bebas Neue';
+    color: white;
+    font-size: 60px;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+.banda-section .banda-details{
+    display: flex;
+    justify-content: center;
+    font-size:  100px;
 }
 
 .card-container{
@@ -97,7 +147,7 @@ html{
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    min-height: 100vh;
+    min-height: 70vh;
     padding: 40px 10px;
 
     width: 100%;
@@ -228,7 +278,7 @@ html{
     padding: 10px;
     border-radius: 15px;
     width: 100%;
-    transition: 0.3s;
+    transition: 0.3s ease;
 
     /* animación */
     view-timeline-name: --revelar;
@@ -575,6 +625,51 @@ html{
         box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     }
 }
+
+/* CAROUSEL INFINITO */
+
+.image-carousel-section{
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
+    width: 100%;
+    display: flex;
+}
+
+.image-carousel{
+    margin: 100px auto;
+    width: 90%;
+    display: flex;
+    overflow-x: auto;
+    gap: 1em;
+}
+
+.image-carousel::-webkit-scrollbar{
+    display: none;
+}
+
+.group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    animation: spin 120s infinite linear;
+    padding-right: 1em;
+}
+
+.group .image-card{
+    flex: 0 0 5em;
+}
+
+.group .image-card img{
+    width: 1250px;
+    max-height: 650px;
+}
+
+@keyframes spin{
+    from {translate: 0;}
+    to {translate: -100%;}
+}
+
+
 
 /* FORMULARIO SUSCRIPCIÓN */
 
