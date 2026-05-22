@@ -23,17 +23,29 @@
     <body>
         <header class="header">
             <div class="container header-content">
-
                 <h1 class="logo-container">
                     <img src="img/logo.png" alt="Logo">
                 </h1>
+
                 <nav class="nav">
-                    <ul>
-                        <li><a class="item-bar" href="#banda">Banda</a></li>
-                        <li><a class="item-bar" href="#ep">EP</a></li>
-                        <li><a class="item-bar" href="#videos">Videos</a></li>
-                        <li><a class="item-bar" href="#merch">Merch</a></li>
-                    </ul>
+                    
+                    <input type="checkbox" id="sidebar-active">
+                    <label for="sidebar-active"  class="open-sidebar-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                    </label>
+                    <label id="overlay" for="sidebar-active"></label>
+                    <div class="links-container">
+                        <label for="sidebar-active" class="close-sidebar-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                        </label>
+
+                        <ul>
+                            <li><a class="item-bar" href="#banda">Banda</a></li>
+                            <li><a class="item-bar" href="#ep">EP</a></li>
+                            <li><a class="item-bar" href="#videos">Videos</a></li>
+                            <li><a class="item-bar" href="#merch">Merch</a></li>
+                        </ul>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -313,6 +325,8 @@
                         <a class="arrow-btn" onclick="document.querySelector('.videos-slider').scrollBy({ left: -300, behavior: 'smooth' })"><</a>
                         <a class="arrow-btn" onclick="document.querySelector('.videos-slider').scrollBy({ left: 300, behavior: 'smooth' })">></a>
                     </div>
+
+                    <p class="texto-dispositivos-video">Desliza para ver más videos</p>
 
                 </div>
 
