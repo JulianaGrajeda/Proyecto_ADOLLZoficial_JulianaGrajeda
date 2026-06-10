@@ -155,6 +155,31 @@
                 <h1 class="banda-details">✦</h1>
             </section>
 
+            <section id="newsong" class="newsong-section">
+                <div class="container-newsong">
+
+                    <h1 class="newsong-titulo">NUMBER 1</h1>
+
+                    <div class="newvideo-card">
+                        <div class="newvideo-wrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/6Q3dWDcPTwU?si=2HaHWKW72EIMp6Td" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+
+                    <img src="img/aziapcfd.png" class="object" data-value="2.5">
+                    <img src="img/sofipcfd.png" class="object" data-value="-2">
+                    <img src="img/kennypcfd.png" class="object" data-value="3">
+                    <img src="img/michpcfd.png" class="object" data-value="-3">
+                    <img src="img/ivypcfd.png" class="object" data-value="-2">
+                    <img src="img/mariposafd.png" class="object" data-value="4.5">
+                    <img src="img/planetafd.png" class="object" data-value="-6">
+                    <img src="img/starsfd.png" class="object" data-value="5">
+                    <img src="img/coronafd.png" class="object" data-value="4">
+                    <img src="img/lipstickfd.png" class="object" data-value="3.5">
+                    <img src="img/telefonofd.png" class="object" data-value="-4.5">
+                </div>
+            </section>
+
             <section id="ep" class="ep-section">
                 <div class="container ep-content">
 
@@ -1119,7 +1144,7 @@
             
         </div>
             
-        <script>
+        <script type="text/javascript">
 
             const actualForm = document.getElementById('actualForm');
             const formContainer = document.getElementById('formContainer');
@@ -1164,6 +1189,24 @@
                     subscribeModal.classList.remove('open');
                 }
             });
+
+            // ==========================================
+            // EFECTO PARALLAX 
+            // ==========================================
+
+            document.addEventListener('mousemove', parallax);
+
+            function parallax(e){
+                document.querySelectorAll('.object').forEach(function(move){
+
+                    var moving_value = move.getAttribute('data-value');
+                    var x = (e.clientX * moving_value) / 250;
+                    var y = (e.clientY * moving_value) / 250;
+
+                    // move.style.transform = 'translateX('+x+'px) translateY('+y+'px)';
+                    move.style.transform = `translate3d(${x}px, ${y}px, 0px)`;
+                });
+            }
 
         </script>
 
