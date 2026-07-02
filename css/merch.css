@@ -144,30 +144,34 @@ body{
     margin-top: 20px;
 }
 
-.marquee-item{
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Bebas Neue', sans-serif;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 0 10px;
-}
 
 .marquee-track{
     display: flex;
     width: max-content;
-    animation: marquee 10s linear infinite;
+    will-change: transform;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee-group{
+    display: flex;
+    flex-shrink: 0;
+    gap: 20px;
+}
+
+.marquee-item{
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }
 
 @keyframes marquee {
-    0% {
+    from{
         transform: translateX(0);
     }
-    100% {
+    to{
         transform: translateX(-50%);
     }
 }
