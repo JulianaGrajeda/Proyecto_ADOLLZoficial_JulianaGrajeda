@@ -18,46 +18,38 @@
         <div class="header-content">
             <a href="index.html"><img src="img/logo_blanco.png" alt="Logo de Adollz"></a>
             <h1>Merch Oficial</h1>
+            <div class="header-icons">
+                <a href="carrito.html"><i class="fa-solid fa-cart-shopping" style="color: #f1297c;"></i></a>
+            </div>
         </div>
     </header>
 
     <main class="main">
 
         <section class="hero-banner">
-            <img src="img/banner.png" alt="banner adollz">
+            <img src="img/dollzbanner.png" alt="banner adollz">
         </section>
     
         <section class="marquee-section">
+
             <div class="marquee-container">
-                <div class="marquee-content">
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
-                    <span>✦ ENVÍOS A TODO EL PAÍS ✦</span>
+                <div class="marquee-track">
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <!-- Duplicated items -->
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
+                    <div class="marquee-item">✦ ENVÍOS A TODO EL PAÍS ✦</div>
                 </div>
             </div>
-        </section>
 
-        <section class="video-section">
-            <video autoplay muted loop playsinline class="video-banner">
-                <source src="video/banner-video.mp4" type="video/mp4">
-                Tu navegador no soporta el elemento de video.
-            </video>
         </section>
-
+        
         <section class="nav-section">
             <nav class="nav">
                 <ul>
@@ -68,6 +60,13 @@
             </nav>
         </section>
 
+        <section class="video-section">
+            <video autoplay muted loop playsinline class="video-banner">
+                <source src="video/banner-video.mp4" type="video/mp4">
+                Tu navegador no soporta el elemento de video.
+            </video>
+        </section>
+        
         <p class="aviso-dispositivos">Desliza para ver más productos</p>
 
         <section id="remeras" class="remeras-section">
@@ -75,53 +74,7 @@
 
                 <h1>REMERAS</h1>
 
-                <div class="remeras-container">
-
-                    <div class="remeras-item">
-                        <div class="remeras-info">
-                            <img src="img/remeras.png" alt="remeras adollz">
-                            <h3>REMERA DOLLZ</h3>
-                            <p> Remera 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="remeras-item">
-                        <div class="remeras-info">
-                            <img src="img/remeras.png" alt="remeras adollz">
-                            <h3>REMERA DOLLZ</h3>
-                            <p> Remera 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="remeras-item">
-                        <div class="remeras-info">
-                            <img src="img/remeras.png" alt="remeras adollz">
-                            <h3>REMERA ANGELZ</h3>
-                            <p> Remera 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="remeras-item">
-                        <div class="remeras-info">
-                            <img src="img/remeras.png" alt="remeras adollz">
-                            <h3>REMERA ANGELIC SPICE</h3>
-                            <p> Remera 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                </div>
+                <div class="remeras-container" id="lista-remeras"></div>
 
                 <div class="nav-arrows">
                     <a class="arrowb-btn" onclick="document.querySelector('.remeras-container').scrollBy({ left: -410, behavior: 'smooth' })"><</a>
@@ -136,75 +89,7 @@
 
                 <h1>HOODIES</h1>
 
-                <div class="hoodies-container">
-
-                    <div class="hoodies-item">
-                        <div class="hoodies-info">
-                            <img src="img/hoodies.png" alt="hoodies adollz">
-                            <h3>hoodies DOLLZ</h3>
-                            <p> hoodies 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="hoodies-item">
-                        <div class="hoodies-info">
-                            <img src="img/hoodies.png" alt="hoodies adollz">
-                            <h3>hoodies DOLLZ</h3>
-                            <p> hoodies 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="hoodies-item">
-                        <div class="hoodies-info">
-                            <img src="img/hoodies.png" alt="hoodies adollz">
-                            <h3>hoodies ANGELZ</h3>
-                            <p> hoodies 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-
-                    <div class="hoodies-item">
-                        <div class="hoodies-info">
-                            <img src="img/hoodies.png" alt="hoodies adollz">
-                            <h3>hoodies ANGELZ</h3>
-                            <p> hoodies 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="hoodies-item">
-                        <div class="hoodies-info">
-                            <img src="img/hoodies.png" alt="hoodies adollz">
-                            <h3>hoodies ANGELZ</h3>
-                            <p> hoodies 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="hoodies-item">
-                        <div class="hoodies-info">
-                            <img src="img/hoodies.png" alt="hoodies adollz">
-                            <h3>hoodies ANGELIC SPICE</h3>
-                            <p> hoodies 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                </div>
+                <div class="hoodies-container" id="lista-hoodies"></div>
 
                 <div class="nav-arrows">
                     <a class="arrowb-btn" onclick="document.querySelector('.hoodies-container').scrollBy({ left: -410, behavior: 'smooth' })"><</a>
@@ -219,97 +104,7 @@
 
                 <h1>accesorios</h1>
 
-                <div class="accesorios-container">
-
-                    <div class="accesorios-item">
-                        <div class="accesorios-info">
-                            <img src="img/accesorios.png" alt="accesorios adollz">
-                            <h3>accesorios DOLLZ</h3>
-                            <p> accesorios 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="accesorios-item">
-                        <div class="accesorios-info">
-                            <img src="img/accesorios.png" alt="accesorios adollz">
-                            <h3>accesorios DOLLZ</h3>
-                            <p> accesorios 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="accesorios-item">
-                        <div class="accesorios-info">
-                            <img src="img/accesorios.png" alt="accesorios adollz">
-                            <h3>accesorios ANGELZ</h3>
-                            <p> accesorios 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="accesorios-item">
-                        <div class="accesorios-info">
-                            <img src="img/accesorios.png" alt="accesorios adollz">
-                            <h3>accesorios ANGELZ</h3>
-                            <p> accesorios 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="accesorios-item">
-                        <div class="accesorios-info">
-                            <img src="img/accesorios.png" alt="accesorios adollz">
-                            <h3>accesorios ANGELZ</h3>
-                            <p> accesorios 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="accesorios-item">
-                        <div class="accesorios-info">
-                            <img src="img/accesorios.png" alt="accesorios adollz">
-                            <h3>accesorios ANGELZ</h3>
-                            <p> accesorios 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="accesorios-item">
-                        <div class="accesorios-info">
-                            <img src="img/accesorios.png" alt="accesorios adollz">
-                            <h3>accesorios ANGELZ</h3>
-                            <p> accesorios 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                    <div class="accesorios-item">
-                        <div class="accesorios-info">
-                            <img src="img/accesorios.png" alt="accesorios adollz">
-                            <h3>accesorios ANGELIC SPICE</h3>
-                            <p> accesorios 100% algodón, estampada</p>
-                        </div>
-
-                        <a href="#popup-proximamente" class="btn-comprar">Comprar</a>
-
-                    </div>
-                    
-                </div>
+                <div class="accesorios-container" id="lista-accesorios"></div>
 
                 <div class="nav-arrows">
                     <a class="arrowb-btn" onclick="document.querySelector('.accesorios-container').scrollBy({ left: -410, behavior: 'smooth' })"><</a>
@@ -360,15 +155,64 @@
         </div>
     </footer>
 
-    <div id="popup-proximamente" class="popup-overlay">
-        <div class="popup-content">
-            <img src="img/logo_blanco.png" alt="logo" class="logo-blanco-popup">
-            <a href="#!" class="popup-close">&times;</a>
+    <div id="popup-tienda" class="popup-overlay">
 
-            <h2 class="popup-title">¡Próximamente!</h2>
-            <p class="popup-text">Estamos preparando la tienda oficial de las chicas. ¡Mantenete alerta!</p>
+        <div class="popup-content">
+            <button class="popup-close" id="btn-cerrar-popup">×</button>
+
+            <div id="vista-seleccion" class="popup-view">
+                <img src="img/remeranegra.png" id="dinamic-img" class="popup-img">
+
+                <div class="popup-info">
+                    <p class="popup-precio">PRECIO</p>
+                    <h3 id="dinamic-precio">$ 0</h3>
+
+                    <div class="selector-grupo">
+
+                        <label>COLORES: </label>
+                        <div class="opciones-colores" id="contenedor-colores">
+                        </div>
+
+                        <label>TALLES: </label>
+                        <div class="opciones-talles" id="contenedor-talles"></div>
+
+                        <div class="cantidad-grupo">
+                            <label>CANTIDAD: </label>
+
+                            <div class="cantidad-control">
+                                <button type="button" id="btn-cantidad-mas" class="btn-cant">+</button>
+                                <span id="numero-cantidad">1</span>
+                                <button type="button" id="btn-cantidad-menos" class="btn-cant">-</button>
+                            </div>
+                            <p id="msg-limite-cantidad" class="msg-limite hidden">Hasta 5 unidades por compra</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button id="btn-agregar-carrito" class="btn-agregar">AÑADIR</button>
+
+            </div>
+
+            <div id="vista-exito" class="popup-view hidden">
+
+                <p class="exito-popup-text">SE HA AÑADIDO AL CARRITO CON ÉXITO</p>
+
+                <div class="icono-bolsa">
+                    <img src="/img/exito.png" alt="">
+                </div>
+                
+                <button class="btn-ir-carrito" onclick="window.location.href='carrito.html'">IR AL CARRITO</button>
+                <a href="#" id="btn-seguir-comprando" class="link-seguir">SEGUIR COMPRANDO</a>
+                
+            </div>
         </div>
+        
     </div>
+
+
+    <script src="js/script.js"></script>
 
 </body>
 </html>

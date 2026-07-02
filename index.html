@@ -360,6 +360,16 @@
             <section id="merch" class="merch-section">
                 <div class="container merch-content">
 
+                    <div class="preescena-content">
+                        <img src="./img/preescena.png">
+
+                        <div class="preescena-info">
+                            <h1>ACCEDE A NUESTRA MERCH OFICIAL</h1>
+                            <button class="btn-ver-merch" onclick="window.location.href='merch.html'">Ver Merch</button>
+                        </div>
+
+                    </div>
+
                     <!-- Linea uno -->
                     <hr class="linea-horizontal">
                     
@@ -1143,72 +1153,8 @@
             </div>
             
         </div>
-            
-        <script type="text/javascript">
 
-            const actualForm = document.getElementById('actualForm');
-            const formContainer = document.getElementById('formContainer');
-            const successMessage = document.getElementById('success-message');
-            const subscribeBtn = document.getElementById('subscribeBtn');
-            const subscribeModal = document.getElementById('subscribeModal')
-            const closeModal = document.getElementById('closeModal')
-
-            subscribeBtn.addEventListener('click', (event) =>{
-                subscribeModal.classList.add('open');
-            });
-
-            closeModal.addEventListener('click', (event) =>{
-                subscribeModal.classList.remove('open');
-            });
-
-            actualForm.addEventListener('submit', (event)=>{
-
-                event.preventDefault();
-
-                const data = new FormData(event.target);
-
-                fetch(event.target.action,{
-                    method: 'post',
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                }).then(response => {
-                    if(response.ok){
-                        formContainer.style.display = 'none';
-                        successMessage.style.display = 'block';
-                        actualForm.reset();
-                    } else {
-                        alert('Ups! Algo salió mal, por favor intenta nuevamente.');
-                    }
-                });
-            });
-
-            subscribeModal.addEventListener('click', (event) =>{
-                if(event.target === subscribeModal){
-                    subscribeModal.classList.remove('open');
-                }
-            });
-
-            // ==========================================
-            // EFECTO PARALLAX 
-            // ==========================================
-
-            document.addEventListener('mousemove', parallax);
-
-            function parallax(e){
-                document.querySelectorAll('.object').forEach(function(move){
-
-                    var moving_value = move.getAttribute('data-value');
-                    var x = (e.clientX * moving_value) / 250;
-                    var y = (e.clientY * moving_value) / 250;
-
-                    // move.style.transform = 'translateX('+x+'px) translateY('+y+'px)';
-                    move.style.transform = `translate3d(${x}px, ${y}px, 0px)`;
-                });
-            }
-
-        </script>
+        <script src="js/indexScript.js"></script>        
 
     </body>
 </html>
