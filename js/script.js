@@ -6,9 +6,9 @@ const productos = {
         talles: ["S", "M", "L", "XL"],
         descripcion: "100% algodón de alta calidad con estampa oficial retro grunge.",
         colores: [
-            { nombre: "negro", codigo: "#000000", img: "./img/remeranegra.png" },
-            { nombre: "Rosa", codigo: "#f1297c", img: "./img/remerarosa.png" },
-            { nombre: "blanco", codigo: "#ffffff", img: "./img/remerablanca.png" },
+            { nombre: "negro", codigo: "#000000", img: "img/remeranegra.png" },
+            { nombre: "Rosa", codigo: "#f1297c", img: "img/remerarosa.png" },
+            { nombre: "blanco", codigo: "#ffffff", img: "img/remerablanca.png" },
         ]
     },
     "remera-angelz": {
@@ -18,7 +18,7 @@ const productos = {
         talles: ["S", "M", "L"],
         descripcion: "Estampa exclusiva Angelz en frente y espalda. Oversized fit.",
         colores: [
-            { nombre: "blanco", codigo: "#ffffff", img: "./img/remerablanca.png" }
+            { nombre: "blanco", codigo: "#ffffff", img: "img/remerablanca.png" }
         ]
     },
     "hoodie-angelz": {
@@ -28,8 +28,8 @@ const productos = {
         talles: ["M", "L", "XL"],
         descripcion: "Frisa pesada ideal para el invierno, capucha forrada y cordones custom.",
         colores: [
-            { nombre: "negro", codigo: "#000000", img: "./img/hoodies.png" },
-            { nombre: "blanco", codigo: "#ffff", img: "./img/hoodies.png" }
+            { nombre: "negro", codigo: "#000000", img: "img/hoodies.png" },
+            { nombre: "blanco", codigo: "#ffff", img: "img/hoodies.png" }
         ]
     },
     "totebag-numberone": {
@@ -39,8 +39,8 @@ const productos = {
         talles: ["Único"],
         descripcion: "Totebag estampada de lona resistente con diseño exclusivo.",
         colores: [
-            { nombre: "blanco", codigo: "#ffffff", img: "./img/toteb.png" },
-            { nombre: "negro", codigo: "#000000", img: "./img/toten.png" }
+            { nombre: "blanco", codigo: "#ffffff", img: "img/toteb.png" },
+            { nombre: "negro", codigo: "#000000", img: "img/toten.png" }
         ]
     },
     "remera-angelzclub": {
@@ -50,7 +50,7 @@ const productos = {
         talles: ["M", "L", "XL"],
         descripcion: "100% algodón de alta calidad con estampa oficial retro grunge.",
         colores: [
-            { nombre: "negro", codigo: "#000000", img: "./img/angelzclubN.png" }
+            { nombre: "negro", codigo: "#000000", img: "img/angelzclubN.png" }
         ]
     },
     "poster-popstar": {
@@ -60,7 +60,7 @@ const productos = {
         talles: ["único"],
         descripcion: "Poster a color impreso en papel de alta calidad",
         colores: [
-            { nombre: "negro", codigo: "#000000", img: "./img/popstarposter.png" }
+            { nombre: "negro", codigo: "#000000", img: "img/popstarposter.png" }
         ]
     },
     "poster-quema": {
@@ -70,7 +70,7 @@ const productos = {
         talles: ["único"],
         descripcion: "Poster a color impreso en papel de alta calidad",
         colores: [
-            { nombre: "negro", codigo: "#000000", img: "./img/quemaposter.png" }
+            { nombre: "negro", codigo: "#000000", img: "img/quemaposter.png" }
         ]
     },
     "poster-sincontrol": {
@@ -80,7 +80,7 @@ const productos = {
         talles: ["único"],
         descripcion: "Poster a color impreso en papel de alta calidad",
         colores: [
-            { nombre: "negro", codigo: "#000000", img: "./img/sincontrolposter.png" }
+            { nombre: "negro", codigo: "#000000", img: "img/sincontrolposter.png" }
         ]
     }
 };

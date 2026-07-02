@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modalOverlay.innerHTML = `
                 <div class="modal-cartel">
                     <div class="modal-img">
-                        <img src="./img/check.png">
+                        <img src="img/check.png">
                     </div>
                     <h2>¡COMPRA REALIZADA CON ÉXITO!</h2>
                     <button class="btn-modal-cerrar">ENTENDIDO</button>
