@@ -7,7 +7,7 @@ const productos = {
         descripcion: "100% algodón de alta calidad con estampa oficial retro grunge.",
         colores: [
             { nombre: "negro", codigo: "#000000", img: "img/remeranegra.png" },
-            { nombre: "Rosa", codigo: "#f1297c", img: "img/remerarosa.png" },
+            { nombre: "rosa", codigo: "#f1297c", img: "img/remerarosa.png" },
             { nombre: "blanco", codigo: "#ffffff", img: "img/remerablanca.png" },
         ]
     },
