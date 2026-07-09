@@ -25,7 +25,7 @@ completamente funcional.
 
 - **Comunidad & Redes:** Enlaces a todas sus redes sociales oficiales.
 
- ![Imagen de la sección banda de la página](assets/bandasection.png)
+ ![Imagen de la sección banda de la página](assets/redesSociales.png)
   
 - **Sección Multimedia:** Acceso directo a sus videos musicales.
 
