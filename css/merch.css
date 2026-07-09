@@ -507,7 +507,7 @@ TIENDA COMPONENTES (UNIFICADOS)
     color: white;
     border: none;
     border-radius: 10px;
-    transition: 3s;
+    transition: .3s;
     cursor: pointer;
     font-family: 'Bebas Neue', sans-serif;
 }
