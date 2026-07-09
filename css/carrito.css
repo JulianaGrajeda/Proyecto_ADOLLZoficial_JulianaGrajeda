@@ -15,7 +15,6 @@ html{
 }
 
 body{
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
     overflow-x: hidden;
 }
 
@@ -25,7 +24,7 @@ body{
 }
 
 .main{
-    padding-top: 170px;
+    padding-top: clamp(120px, 12vw, 160px);
 }
 
 /* 
@@ -57,7 +56,7 @@ body{
 }
 
 .header-content img{
-    width: 140px;
+    width:clamp(90px,9vw,140px);
     height: auto;
     position: absolute;
     left: 20px;
@@ -68,7 +67,7 @@ body{
 
 .header-content h1{
     color: #f1297c;
-    font-size: 60px;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
     font-family: 'Bebas Neue', cursive;
     font-weight: bold;
     text-transform: uppercase;
@@ -79,21 +78,42 @@ body{
 
 .header-icons{
     position: absolute;
-    font-size: 35px;
-    right: 40px;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    right: clamp(15px,3vw,40px);
     top: 50%;
     transform: translateY(-50%);
+}
+
+#contador-carrito{
+    position: absolute;
+    top: -11px;
+    right: -12px;
+
+    width: 22px;
+    height: 22px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    padding: 0;
+
+    font-size: 14px;
+    color: white;
+    background-color: #5d5d5d;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .header.header-scrolled{
     background-color: rgba(255,255,255,0.95);
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    padding: 5px;
+    padding:8px 0;
 }
 
 .header.header-scrolled h1{
     color: #333333;
-    font-size: 50px;
+    font-size:clamp(2rem,4vw,3rem);
 }
 
 .header.header-scrolled img{
@@ -106,6 +126,10 @@ body{
     padding: 20px;
 }
 
+.header.header-scrolled #contador-carrito{
+    background-color: #262525;
+}
+
 /*
 ==========================================
     HERO & BANNERS 
@@ -114,34 +138,34 @@ body{
 
 .hero-banner{
     width: 100%;
-    height: 400px;
+    height: clamp(180px, 35vw, 400px);
     overflow: hidden;
     background-color: black;
     line-height: 0;
 }
 
 .hero-banner img{
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    display: block;
 }
 
 /* MARQUEE SECTION */
 
 .marquee-section{
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
     width: 100%;
-    padding: 20px 0;
+    padding: clamp(15px, 2vw, 20px) 0;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
 }
 
 .marquee-container{
     width: 100%;
     overflow: hidden;
     background: black;
-    padding: 20px 0;
-    margin-top: 20px;
+    padding: clamp(15px, 2vw, 20px) 0;
+    margin-top: clamp(15px, 2vw, 20px);
 }
 
 
@@ -155,14 +179,14 @@ body{
 .marquee-group{
     display: flex;
     flex-shrink: 0;
-    gap: 20px;
+    gap: clamp(15px, 2vw, 20px);
 }
 
 .marquee-item{
     flex: 0 0 auto;
     white-space: nowrap;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: bold;
     color: white;
 }
@@ -196,7 +220,7 @@ body{
 
 .carrito-content .titulo{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 6em;
+    font-size: clamp(2.5rem, 6vw, 6rem);
     color: #f1297c;
     text-align: center;
     letter-spacing: 2px;
@@ -215,7 +239,7 @@ body{
     flex-direction: column;
     gap: 25px;
     padding: 20px;
-    max-height: 690px;
+    max-height: calc(100vh - 300px);
     overflow-y: auto;
 
     padding-right: 20px;
@@ -259,8 +283,9 @@ body{
 }
 
 .item-img{
-    width: 90px;
-    height: 95px;
+    width:90px;
+    aspect-ratio:1;
+    height:auto;
     object-fit: cover;
     border-radius: 12px;
     background-color: #e6e6e6;
@@ -272,7 +297,7 @@ body{
 
 .item-detalles h3{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 35px;
+    font-size: 30px;
     color: #f1297c;
     letter-spacing: 0.5px;
     margin-bottom: 18px;
@@ -280,7 +305,7 @@ body{
 
 .item-meta-grupo{
     display: flex;
-    flex-direction: wrap;
+    flex-wrap: wrap;
     gap: 20px;
     align-items: center;
 }
@@ -337,14 +362,16 @@ body{
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     height: fit-content;
+    position: sticky;
+    top: 140px;
 }
 
 .titulo-resumen{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 30px;
+    font-size: 40px;
     color: #333;
     text-align: center;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 .linea-divisoria{
@@ -358,18 +385,20 @@ body{
     display: flex;
     justify-content: space-between;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     color: #333;
     margin-bottom: 10px;
 }
 
 .total-fila{
-    font-size: 24px;
+    font-size: 28px;
     margin-top: 15px;
+    
 }
 
 .total-precio{
-    color: #f1297c
+    color: #f1297c;
+    font-weight: bold;
 }
 
 .btn-pagar{
@@ -389,6 +418,10 @@ body{
 
 .btn-pagar:hover{
     background: #f1297c;
+}
+
+.btn-pagar:active{
+    transform: scale(.97);
 }
 
 .carrito-vacio{
@@ -425,6 +458,8 @@ body{
     flex-direction: column;
     animation: scaleUp 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     font-family: 'Bebas Neue', sans-serif;
+    max-height:90vh;
+    overflow:auto;
 }
 
 .modal-cartel h2{
@@ -494,6 +529,7 @@ body{
     padding: 30px 0;
     width: 100%;
     position: relative;
+    z-index: 1000;
 }
 
 .footer-content{
@@ -592,4 +628,107 @@ body{
 .social-icons a i:hover{
     color: #f1297c;
     transform: scale(1.2);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 778px){
+
+    .header-content{
+        padding: 10px 15px;
+    }
+
+    .header-content img{
+        width: 69px;
+        padding: 5px;
+    }
+
+    .header-icons{
+        right: 15px;
+        font-size: 28px;
+    }
+
+    #contador-carrito{
+        font-size: 13px;
+        padding: 2px 7px;
+    }
+
+    .hero-banner{
+        height: clamp(110px, 24vw, 180px);
+    }
+
+    .hero-banner img{
+        object-position: center;
+    }
+
+    .footer-content{
+        padding:0 20px 40px;
+        align-items:center;
+    }
+
+    .footer-top{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .footer-logo-wrapper{
+        position:static;
+    }
+
+    .footer-logo-wrapper img{
+        width:90px;
+    }
+
+    .nav-footer ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .item-footer{
+        font-size:clamp(1rem,4vw,1.3rem);
+    }
+
+    .linea-footer{
+        width:90%;
+        margin:20px auto;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .copyright{
+        padding-left:0;
+        font-size:.8rem;
+        text-align:center;
+        line-height:1.5;
+    }
+
+    .social-icons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .btn-subir{
+        padding: 12px;
+    }
+
+    .btn-subir i{
+        font-size: 15px;
+    }
+
+    .nav a{
+        font-size: 28px;
+    }
+
+    .marquee-track{
+        animation-duration: 30s;
+    }
+
+    .resumen-container{
+        margin-top: 30px;
+    }
+
 }

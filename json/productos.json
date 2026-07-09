@@ -1,0 +1,86 @@
+{
+    "remera-dollz": {
+        "nombre": "REMERA ADOLLZ",
+        "precio": 25600,
+        "categoria": "remeras",
+        "talles": ["S", "M", "L", "XL"],
+        "descripcion": "100% algodón de alta calidad con estampa oficial retro grunge.",
+        "colores": [
+            { "nombre": "negro", "codigo": "#000000", "img": "img/remeranegra.png" },
+            { "nombre": "rosa", "codigo": "#f1297c", "img": "img/remerarosa.png" },
+            { "nombre": "blanco", "codigo": "#ffffff", "img": "img/remerablanca.png" }
+        ]
+    },
+    "remera-angelz": {
+        "nombre": "REMERA ANGELZ",
+        "precio": 26000,
+        "categoria": "remeras",
+        "talles": ["S", "M", "L"],
+        "descripcion": "Estampa exclusiva Angelz en frente y espalda. Oversized fit.",
+        "colores": [
+            { "nombre": "blanco", "codigo": "#ffffff", "img": "img/remerablanca.png" }
+        ]
+    },
+    "hoodie-angelz": {
+        "nombre": "HOODIE ANGELZ",
+        "precio": 42000,
+        "categoria": "hoodies",
+        "talles": ["M", "L", "XL"],
+        "descripcion": "Frisa pesada ideal para el invierno, capucha forrada y cordones custom.",
+        "colores": [
+            { "nombre": "negro", "codigo": "#000000", "img": "img/hoodies.png" },
+            { "nombre": "blanco", "codigo": "#ffff", "img": "img/hoodies.png" }
+        ]
+    },
+    "totebag-numberone": {
+        "nombre": "TOTE NUMBER 1",
+        "precio": 15000,
+        "categoria": "accesorios",
+        "talles": ["Único"],
+        "descripcion": "Totebag estampada de lona resistente con diseño exclusivo.",
+        "colores": [
+            { "nombre": "blanco", "codigo": "#ffffff", "img": "img/toteb.png" },
+            { "nombre": "negro", "codigo": "#000000", "img": "img/toten.png" }
+        ]
+    },
+    "remera-angelzclub": {
+        "nombre": "REMERA ANGELZ CLUB",
+        "precio": 25600,
+        "categoria": "remeras",
+        "talles": ["M", "L", "XL"],
+        "descripcion": "100% algodón de alta calidad con estampa oficial retro grunge.",
+        "colores": [
+            { "nombre": "negro", "codigo": "#000000", "img": "img/angelzclubN.png" }
+        ]
+    },
+    "poster-popstar": {
+        "nombre": "POSTER POPSTAR",
+        "precio": 10000,
+        "categoria": "accesorios",
+        "talles": ["único"],
+        "descripcion": "Poster a color impreso en papel de alta calidad",
+        "colores": [
+            { "nombre": "negro", "codigo": "#000000", "img": "img/popstarposter.png" }
+        ]
+    },
+    "poster-quema": {
+        "nombre": "POSTER QUEMA",
+        "precio": 10000,
+        "categoria": "accesorios",
+        "talles": ["único"],
+        "descripcion": "Poster a color impreso en papel de alta calidad",
+        "colores": [
+            { "nombre": "negro", "codigo": "#000000", "img": "img/quemaposter.png" }
+        ]
+    },
+    "poster-sincontrol": {
+        "nombre": "POSTER SIN CONTROL",
+        "precio": 10000,
+        "categoria": "accesorios",
+        "talles": ["único"],
+        "descripcion": "Poster a color impreso en papel de alta calidad",
+        "colores": [
+            { "nombre": "negro", "codigo": "#000000", "img": "img/sincontrolposter.png" }
+        ]
+    }
+}

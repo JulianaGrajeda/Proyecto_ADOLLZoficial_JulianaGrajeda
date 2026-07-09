@@ -1,89 +1,4 @@
-const productos = {
-    "remera-dollz": {
-        nombre: "REMERA ADOLLZ",
-        precio: 25600,
-        categoria: "remeras",
-        talles: ["S", "M", "L", "XL"],
-        descripcion: "100% algodón de alta calidad con estampa oficial retro grunge.",
-        colores: [
-            { nombre: "negro", codigo: "#000000", img: "img/remeranegra.png" },
-            { nombre: "rosa", codigo: "#f1297c", img: "img/remerarosa.png" },
-            { nombre: "blanco", codigo: "#ffffff", img: "img/remerablanca.png" },
-        ]
-    },
-    "remera-angelz": {
-        nombre: "REMERA ANGELZ",
-        precio: 26000,
-        categoria: "remeras",
-        talles: ["S", "M", "L"],
-        descripcion: "Estampa exclusiva Angelz en frente y espalda. Oversized fit.",
-        colores: [
-            { nombre: "blanco", codigo: "#ffffff", img: "img/remerablanca.png" }
-        ]
-    },
-    "hoodie-angelz": {
-        nombre: "HOODIE ANGELZ",
-        precio: 42000,
-        categoria: "hoodies",
-        talles: ["M", "L", "XL"],
-        descripcion: "Frisa pesada ideal para el invierno, capucha forrada y cordones custom.",
-        colores: [
-            { nombre: "negro", codigo: "#000000", img: "img/hoodies.png" },
-            { nombre: "blanco", codigo: "#ffff", img: "img/hoodies.png" }
-        ]
-    },
-    "totebag-numberone": {
-        nombre: "TOTE NUMBER 1",
-        precio: 15000,
-        categoria: "accesorios",
-        talles: ["Único"],
-        descripcion: "Totebag estampada de lona resistente con diseño exclusivo.",
-        colores: [
-            { nombre: "blanco", codigo: "#ffffff", img: "img/toteb.png" },
-            { nombre: "negro", codigo: "#000000", img: "img/toten.png" }
-        ]
-    },
-    "remera-angelzclub": {
-        nombre: "REMERA ANGELZ CLUB",
-        precio: 25600,
-        categoria: "remeras",
-        talles: ["M", "L", "XL"],
-        descripcion: "100% algodón de alta calidad con estampa oficial retro grunge.",
-        colores: [
-            { nombre: "negro", codigo: "#000000", img: "img/angelzclubN.png" }
-        ]
-    },
-    "poster-popstar": {
-        nombre: "POSTER POPSTAR",
-        precio: 10000,
-        categoria: "accesorios",
-        talles: ["único"],
-        descripcion: "Poster a color impreso en papel de alta calidad",
-        colores: [
-            { nombre: "negro", codigo: "#000000", img: "img/popstarposter.png" }
-        ]
-    },
-    "poster-quema": {
-        nombre: "POSTER QUEMA",
-        precio: 10000,
-        categoria: "accesorios",
-        talles: ["único"],
-        descripcion: "Poster a color impreso en papel de alta calidad",
-        colores: [
-            { nombre: "negro", codigo: "#000000", img: "img/quemaposter.png" }
-        ]
-    },
-    "poster-sincontrol": {
-        nombre: "POSTER SIN CONTROL",
-        precio: 10000,
-        categoria: "accesorios",
-        talles: ["único"],
-        descripcion: "Poster a color impreso en papel de alta calidad",
-        colores: [
-            { nombre: "negro", codigo: "#000000", img: "img/sincontrolposter.png" }
-        ]
-    }
-};
+let productos = {};
 
 let productoActual = null;
 let idProductoActual = "";
@@ -91,9 +6,20 @@ let colorSeleccionado = null;
 let talleSeleccionado = "";
 let cantidadSeleccionada = 1;
 
-// Esperamos a que la página se cargue primero
-
 document.addEventListener('DOMContentLoaded', () => {
+
+    function cargarBaseDeDatos(){
+        fetch('json/productos.json')
+            .then(response => {
+                if(!response.ok) throw new Error("Error en el archivo JSON");
+                return response.json(); // Retornamos la promesa correctamente una sola vez
+            })
+            .then(data => {
+                productos = data;
+                dibujarCatalogo(); // Ahora sí, con los datos cargados, se dibuja todo
+            })
+            .catch(error => console.error("Error al cargar la merch: ", error));
+    }
     
     const popup = document.getElementById('popup-tienda');
     const vistaSeleccion = document.getElementById('vista-seleccion');
@@ -132,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    dibujarCatalogo();
+    cargarBaseDeDatos();
 
     const mainContainer = document.querySelector('.main');
 
@@ -165,6 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (vistaExito) vistaExito.classList.add('hidden');
 
                 if(popup) popup.classList.add('active');
+                document.body.classList.add('popup-open');
             }else{
                 console.error("Error: El data-id del botón no coincide con ningún producto");
             }
@@ -288,14 +215,24 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('carrito', JSON.stringify(carrito));
             console.log("Producto guardado con éxito en el carrito: ", nuevoItem);
 
+            actualizarContadorCarrito();
+
             if (vistaSeleccion) vistaSeleccion.classList.add('hidden');
             if (vistaExito) vistaExito.classList.remove('hidden');
 
         });
     }
 
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            cerrarPopupGlobal();
+        }
+    });
+
+
     const cerrarPopupGlobal = () => {
         if (popup) popup.classList.remove('active');
+        document.body.classList.remove('popup-open');
 
         cantidadSeleccionada = 1;
         if (numeroCantidad) numeroCantidad.innerText = 1;
@@ -322,6 +259,19 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('header-scrolled');
         }
     });
+
+    function actualizarContadorCarrito(){
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        const totalItems = carrito.reduce((acumulador, prod) => acumulador + (prod.cantidad || 1), 0);
+
+        const contadorElemento = document.getElementById('contador-carrito');
+        if (contadorElemento) {
+            contadorElemento.innerText = totalItems;
+        }
+    }
+
+    actualizarContadorCarrito();
 
 });
 

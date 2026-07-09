@@ -44,6 +44,7 @@
                             <li><a class="item-bar" href="#ep">EP</a></li>
                             <li><a class="item-bar" href="#videos">Videos</a></li>
                             <li><a class="item-bar" href="#merch">Merch</a></li>
+                            <li><a class="item-bar" href="#contacto">Contacto</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -156,6 +157,11 @@
             </section>
 
             <section id="newsong" class="newsong-section">
+
+                <div class="banner-newsong">
+                    <img src="img/banner.png" alt="Banner de la banda Adollz">
+                </div>
+
                 <div class="container-newsong">
 
                     <h1 class="newsong-titulo">NUMBER 1</h1>
@@ -361,7 +367,7 @@
                 <div class="container merch-content">
 
                     <div class="preescena-content">
-                        <img src="./img/preescena.png">
+                        <img src="img/preescena.png" alt="Vista previa de la tienda oficial de Adollz">
 
                         <div class="preescena-info">
                             <h1>ACCEDE A NUESTRA MERCH OFICIAL</h1>
@@ -417,7 +423,42 @@
                 </div>
             </section>
 
-            <section class="image-carousel-section">
+            <section id="contacto" class="formulario-contacto-section">
+
+                <div class="contacto-contenedor">
+                    <div class="contacto-encabezado">
+                        <h2>Contacto & Colaboración</h2>
+                        <p>¿Tenés una marca o querés hacernos llegar una propuesta? Escribinos directamente desde acá.</p>
+                    </div>
+
+                    <form id="form-contacto" action="https://formspree.io/f/xzdlyrln" method="POST" novalidate>
+
+                        <div class="control-formulario">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ingresá tu nombre o el de tu marca">
+                            <span class="error-msg hidden" id="error-nombre">Por favor, ingresá un nombre válido.</span>
+
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="ejemplo@correo.com">
+                            <span class="error-msg hidden" id="error-email">Por favor, ingresá un correo electrónico válido.</span>
+                        
+                            <label for="mensaje">Tu Propuesta / Mensaje</label>
+                            <textarea name="mensaje" id="mensaje" rows="5" placeholder="Contanos en detalle de qué se trata tu propuesta o colaboración... "></textarea>
+                            <span class="error-msg hidden" id="error-mensaje">El mensaje no puede estar vacío.</span>
+                        </div>
+
+                        <div class="formulario-acciones">
+                            <button type="submit" id="btn-enviar-formulario" class="btn-principal">Enviar Propuesta</button>
+                        </div>
+
+                        
+                    </form>
+
+                </div>
+
+            </section>
+
+            <!-- <section class="image-carousel-section">
                 <div class="image-carousel">
                     <div class="group">
                         <div class="image-card"><img src="img/1.jpeg" alt=""></div>
@@ -476,7 +517,8 @@
                         <div class="image-card"><img src="img/26.jpeg" alt=""></div>
                     </div>
                 </div>
-            </section>
+            </section> -->
+
         </main>
 
         <a href="#" class="btn-subir" title="Volver al inicio">
@@ -524,7 +566,7 @@
                 <a href="#!" class="close-modal">&times;</a>
                 
                 <div class="spotify-embed">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0FPUHK0VeD0giwGs55r1Qu?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0FPUHK0VeD0giwGs55r1Qu?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
 
                 <div class="lyrics-container">
@@ -649,7 +691,7 @@
                 <a href="#!" class="close-modal">&times;</a>
 
                 <div class="spotify-embed">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3V9Bq1w5fWP7aZ4hpxgkjC?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3V9Bq1w5fWP7aZ4hpxgkjC?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
 
                 <div class="lyrics-container">
@@ -785,7 +827,7 @@
                 <a href="#!" class="close-modal">&times;</a>
 
                 <div class="spotify-embed">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/37ZFAmjOKqVf02X9gFAAr6?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/37ZFAmjOKqVf02X9gFAAr6?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
 
                 <div class="lyrics-container">
@@ -893,7 +935,7 @@
                 <a href="#!" class="close-modal">&times;</a>
 
                 <div class="spotify-embed">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3u57UKolRZ3ucmxneIb99Y?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3u57UKolRZ3ucmxneIb99Y?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
 
                 <div class="lyrics-container">
@@ -976,7 +1018,7 @@
                 <a href="#!" class="close-modal">&times;</a>
 
                 <div class="spotify-embed">
-                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3hL1ZfAQYJ85XEGncxjE6u?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3hL1ZfAQYJ85XEGncxjE6u?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                 </div>
 
                 <div class="lyrics-container">

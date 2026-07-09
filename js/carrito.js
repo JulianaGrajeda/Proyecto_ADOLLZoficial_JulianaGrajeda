@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="item-precio-eliminar">
                     <span class="item-precio">$${(item.precio * item.cantidad).toLocaleString('es-AR')}</span>
-                    <button class="btn-eliminar" data-index="${index}">🗑️</button>
+                    <button class="btn-eliminar" data-index="${index}"><i class="fa-solid fa-trash" style="color: #f1297c;"></i></button>
                 </div>
             `;
             comprasContainer.appendChild(itemElement);
@@ -82,12 +82,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const botonesEliminar = document.querySelectorAll('.btn-eliminar');
         botonesEliminar.forEach(boton => {
             boton.addEventListener('click', (e) => {
-                const index = e.target.getAttribute('data-index');
+                const index = e.currentTarget.getAttribute('data-index');
                 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
                 carrito.splice(index, 1);
 
                 localStorage.setItem('carrito', JSON.stringify(carrito));
+                actualizarContadorCarrito();
                 renderizarCarrito();
             });
         });
@@ -138,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             document.body.appendChild(modalOverlay);
             localStorage.removeItem('carrito');
+            actualizarContadorCarrito();
 
             const btnCerrarModal = modalOverlay.querySelector('.btn-modal-cerrar');
             btnCerrarModal.addEventListener('click', () => {
@@ -157,5 +159,18 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('header-scrolled');
         }
     });
+
+    function actualizarContadorCarrito(){
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        const totalItems = carrito.reduce((acumulador, prod) => acumulador + (prod.cantidad || 1), 0);
+
+        const contadorElemento = document.getElementById('contador-carrito');
+        if (contadorElemento) {
+            contadorElemento.innerText = totalItems;
+        }
+    }
+
+    actualizarContadorCarrito();
 
 });

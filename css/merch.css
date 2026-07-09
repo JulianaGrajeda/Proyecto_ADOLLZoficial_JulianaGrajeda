@@ -25,7 +25,11 @@ body{
 }
 
 .main{
-    padding-top: 170px;
+    padding-top: clamp(120px, 12vw, 160px);
+}
+
+body.popup-open{
+    overflow: hidden;
 }
 
 /* 
@@ -57,7 +61,7 @@ body{
 }
 
 .header-content img{
-    width: 140px;
+    width:clamp(90px,9vw,140px);
     height: auto;
     position: absolute;
     left: 20px;
@@ -68,7 +72,7 @@ body{
 
 .header-content h1{
     color: #f1297c;
-    font-size: 60px;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
     font-family: 'Bebas Neue', cursive;
     font-weight: bold;
     text-transform: uppercase;
@@ -80,20 +84,41 @@ body{
 .header-icons{
     position: absolute;
     font-size: 35px;
-    right: 40px;
+    right: clamp(15px,3vw,40px);
     top: 50%;
     transform: translateY(-50%);
+}
+
+#contador-carrito{
+    position: absolute;
+    top: -11px;
+    right: -12px;
+
+    width: 22px;
+    height: 22px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    padding: 0;
+
+    font-size: 14px;
+    color: white;
+    background-color: #5d5d5d;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .header.header-scrolled{
     background-color: rgba(255,255,255,0.95);
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    padding: 5px;
+    padding:8px 0;
 }
 
 .header.header-scrolled h1{
     color: #333333;
-    font-size: 50px;
+    font-size:clamp(2rem,4vw,3rem);
 }
 
 .header.header-scrolled img{
@@ -106,6 +131,10 @@ body{
     padding: 20px;
 }
 
+.header.header-scrolled #contador-carrito{
+    background-color: #262525;
+}
+
 /*
 ==========================================
     HERO & BANNERS 
@@ -114,34 +143,34 @@ body{
 
 .hero-banner{
     width: 100%;
-    height: 400px;
+    height: clamp(180px, 35vw, 400px);
     overflow: hidden;
     background-color: black;
     line-height: 0;
 }
 
 .hero-banner img{
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    display: block;
 }
 
 /* MARQUEE SECTION */
 
 .marquee-section{
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
     width: 100%;
-    padding: 20px 0;
+    padding: clamp(15px, 2vw, 20px) 0;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
 }
 
 .marquee-container{
     width: 100%;
     overflow: hidden;
     background: black;
-    padding: 20px 0;
-    margin-top: 20px;
+    padding: clamp(15px, 2vw, 20px) 0;
+    margin-top: clamp(15px, 2vw, 20px);
 }
 
 
@@ -155,14 +184,14 @@ body{
 .marquee-group{
     display: flex;
     flex-shrink: 0;
-    gap: 20px;
+    gap: clamp(15px, 2vw, 20px);
 }
 
 .marquee-item{
     flex: 0 0 auto;
     white-space: nowrap;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: bold;
     color: white;
 }
@@ -179,20 +208,20 @@ body{
 /* VIDEO SECTION */
 
 .video-section{
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
-    padding: 40px 0;
     width: 100%;
     overflow: hidden;
+    padding: clamp(25px, 4vw, 40px) 0;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
 }
 
 .video-banner{
+    display: block;
     width: 100%;
-    height: 100%;
+    height: clamp(180px, 35vw, 500px);
     object-fit: cover;
     object-position: center;
     line-height: 0;
     background-color: black; 
-    display: block;
     filter:grayscale(100%);
 }
 
@@ -203,61 +232,64 @@ body{
 */
 
 .nav-section{
-    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
     width: 100%;
-    padding: 40px 0;
+    padding: clamp(25px, 4vw, 40px) 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
 }
 
-nav{
-    display: flex;
-    justify-content: center;
+.nav{
     width: 100%;
 }
 
 .nav ul{
-    list-style: none;
     display: flex;
-    font-family: 'Bebas Neue';
-    width: auto;
-    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(18px, 4vw, 40px);
+
+    list-style: none;
     padding: 0;
     margin: 0;
-    justify-content: center;
+
+    font-family: 'Bebas Neue';
 }
 
 .nav a{
+    display: inline-block;
     color: #333333;
     text-decoration: none;
+    font-size: clamp(1.5rem, 2.8vw, 2.2rem);
     font-weight: bold;
-    font-size: 35px;
-    display: inline-block;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-    transition: 0.3s;
+    transition: color .3s ease, transform .3s ease;
 }
 
 .nav a:hover{
     color: #f1297c;
-    transform: scale(1.2);
+    transform: scale(1.12);
 }
+
+
+/*
+==========================================
+TIENDA COMPONENTES (UNIFICADOS)
+==========================================
+*/
 
 /* flechas */
 .nav-arrows{
     position: absolute;
-    top: 48%;
-    left: 0;
+    inset: 48% 0 auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 0 12%;
+    padding: 0 clamp(20px,8vw,12%);
     pointer-events: none;
     z-index: 10;
-}
-
-.arrow-btn{
-    pointer-events: auto;
 }
 
 .nav-arrows a{
@@ -265,21 +297,15 @@ nav{
     pointer-events: auto;
     color: #333333;
     font-weight: bold;
-    font-size: 120px;
+    font-size: clamp(4rem,8vw,7.5rem);
     cursor: pointer;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .nav-arrows a:hover{
-    transform: scale(1.1);
     color: #f1297c;
+    transform: scale(1.08);
 }
-
-/*
-==========================================
-    TIENDA COMPONENTES (UNIFICADOS)
-==========================================
-*/
 
 .remeras-content, .hoodies-content, .accesorios-content{
     position: relative;
@@ -290,28 +316,37 @@ nav{
     overflow: hidden;
 }
 
-.remeras-content h1, .hoodies-content h1, .accesorios-content h1{
-    font-family: 'Bebas Neue';
-    font-size: 70px;
-    margin-top: 30px;
-    color: #f1297c;
+.remeras-content h1,
+.hoodies-content h1,
+.accesorios-content h1{
+    align-self:flex-start;
 
-    align-self: flex-start;
-    margin-left: 12%;
+    margin-top:clamp(25px,4vw,35px);
+    margin-left:clamp(20px,8vw,12%);
+
+    font-family:'Bebas Neue';
+    font-size:clamp(2.6rem,5vw,4.4rem);
+    color:#f1297c;
 }
 
-.remeras-container, .hoodies-container, .accesorios-container{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    gap: 80px;
-    justify-content: flex-start;
-    align-items: center;
-    max-width: 1200px;
-    margin: 20px auto;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    padding:60px 20px;
+.remeras-container,
+.hoodies-container,
+.accesorios-container{
+
+    display:flex;
+    align-items:center;
+
+    width:100%;
+    max-width:1200px;
+
+    margin:20px auto;
+
+    gap:clamp(25px,5vw,80px);
+
+    padding:clamp(30px,5vw,60px) 20px;
+
+    overflow-x:auto;
+    scroll-behavior:smooth;
 }
 
 .remeras-container::-webkit-scrollbar,
@@ -320,15 +355,24 @@ nav{
     display: none;
 }
 
-.remeras-item, .hoodies-item, .accesorios-item{
-    flex: 0 0 320px;
-    background-color: #ffffff;
-    text-align: center;
-    padding: 20px;
-    font-family: 'Bebas Neue';
-    border-radius: 30px;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.6);
-    transition: 0.6s;
+.remeras-item,
+.hoodies-item,
+.accesorios-item{
+
+    background:#fff;
+    border-radius:30px;
+
+    padding:20px;
+
+    text-align:center;
+
+    font-family:'Bebas Neue';
+
+    box-shadow:0 10px 20px rgba(0,0,0,.6);
+
+    transition:transform .4s, box-shadow .4s;
+
+    flex:0 0 clamp(250px,28vw,320px);
 }
 
 .remeras-item:hover, .hoodies-item:hover, .accesorios-item:hover{
@@ -350,7 +394,7 @@ nav{
 }
 
 .remeras-item img, .hoodies-item img, .accesorios-item img{
-    width: 200px;
+    width:clamp(160px,18vw,200px);
     max-width: 100%;
     height: auto;
     aspect-ratio: 1/1;
@@ -362,21 +406,27 @@ nav{
 }
 
 /* BOTÓN COMPRA GLOBAL */
-.btn-comprar, .btn-ir-carrito{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 25px;
-    background: #262525;
-    color: white;
-    text-decoration: none;
-    padding: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    width: 100%;
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 20px;
-    transition: 0.3s;
-    border: none;
+.btn-comprar,
+.btn-ir-carrito{
+
+    width:100%;
+
+    padding:clamp(12px,2vw,15px);
+
+    font-size:clamp(1.2rem,2vw,1.55rem);
+
+    border-radius:10px;
+
+    background:#262525;
+    color:#fff;
+
+    font-family:'Bebas Neue';
+
+    text-transform:uppercase;
+
+    border:none;
+
+    transition:.3s;
 }
 
 .btn-comprar:hover, .btn-ir-carrito:hover{
@@ -388,19 +438,17 @@ nav{
 
 .popup-overlay{
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
+    inset: 0;
+    width: 100%;
     height: 100vh;
-    background-color: rgba(0,0,0,0.6);
-    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color: rgba(0,0,0,0.6);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
+    z-index: 9999;
 }
 
 
@@ -411,51 +459,57 @@ nav{
 
 
 .popup-content{
-    font-family: 'Bebas Neue', sans-serif;
-    background-color: white;
-    padding: 25px;
-    border-radius: 20px;
-    text-align: center;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    width: 90%;
-    max-width: 420px;
+    width: min(92%, 420px);
     max-height: 90vh;
+    overflow-y: auto;
+
+    padding:clamp(20px,4vw,25px);
+
+    border-radius: 20px;
+
+    background-color: white;
+
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    position: relative;
+
+    font-family: 'Bebas Neue', sans-serif;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .popup-close{
     position: absolute;
     top: 10px;
-    right: 20px;
-    color: #5d5d5d;
-    font-size: 40px;
+    right: 18px;
+
+    font-size:clamp(2rem,5vw,2.5rem);
+
     background: none;
     border: none;
+
     cursor: pointer;
-    line-height: 1;
-    z-index: 10;
+    color: #5d5d5d;
 }
 
-.popup-content .btn-agregar{
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
+.btn-agregar{
+
+    width: 100%;
+    padding: clamp(13px,2vw,15px);
+    font-size: clamp(1.1rem,2vw,1.3rem);
+    text-decoration: none;
     letter-spacing: 2px;
+
+    margin-top: 20px;
     background: #262525;
     color: white;
-    text-decoration: none;
-    padding: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    width: 100%;
-    border-radius: 10px;
-    display: inline-block;
-    margin-top: 20px;
-    transition: 0.4s;
     border: none;
+    border-radius: 10px;
+    transition: 3s;
     cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 .btn-agregar:hover {
@@ -463,22 +517,20 @@ nav{
 }
 
 .popup-img{
-    width: 330px;
-    margin: 0 auto;
-    margin-top: 10px;
+    width:clamp(180px,60vw,330px);
+    max-width: 100%;
+    margin: 10px auto 0;
     display: block;
     object-fit: contain;
 }
 
 .popup-precio{
-    font-size: 20px;
-    text-align: center;
+    font-size:clamp(1rem,2vw,1.25rem);
 }
 
 .popup-info h3{
-    text-align: center;
     color: #f1297c;
-    font-size: 45px;
+    font-size:clamp(2rem,6vw,2.8rem);
     margin-bottom: 5px;
 }
 
@@ -488,11 +540,10 @@ nav{
 }
 
 .selector-grupo label{
-    margin-bottom: 4px;
-    font-size: 18px;
-    color: #262525;
-    display: block;
-    width: 100%;
+    display:block;
+    margin-bottom:5px;
+    font-size:clamp(1rem,2vw,1.15rem);
+    color:#262525;
 }
 
 .opciones-colores{
@@ -502,12 +553,12 @@ nav{
 }
 
 .color-circle{
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #e0e0e0;
-    transition: transform 0.2s;
+    width:clamp(24px,4vw,30px);
+    height:clamp(24px,4vw,30px);
+    border-radius:50%;
+    border:2px solid #e0e0e0;
+    cursor:pointer;
+    transition:.2s;
 }
 
 .color-circle.selected{
@@ -522,13 +573,13 @@ nav{
 }
 
 .talle-btn{
-    padding: 5px 12px;
-    border: 1px solid #ccc;
-    background: white;
-    cursor: pointer;
-    border-radius: 5px;
-    font-family: 'Bebas Neue',  sans-serif;
-    font-size: 18px;
+    padding:6px 14px;
+    font-size:clamp(1rem,2vw,1.15rem);
+    font-family:'Bebas Neue';
+    border-radius:6px;
+    border:1px solid #ccc;
+    background:white;
+    cursor:pointer;
 }
 
 .talle-btn.selected{
@@ -552,31 +603,27 @@ nav{
 
 .exito-popup-text{
     margin-top: 20px;
-    font-size: 45px;
+    font-size: clamp(2rem,5vw,2.8rem);
     color: #333;
     letter-spacing: -1px;
+    text-align: center;
     font-family: 'Bebas Neue', sans-serif;
 }
 
 .link-seguir{
-    display: inline-block;
+    display: flex;
     margin-top: 15px;
     color: #7a7a7a;
     font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     text-decoration: underline;
     transition: 0.2s ease;
 }
 
 .link-seguir:hover{
     color: #f1297c;
-}
-
-.link-seguir{
-    display: inline-block;
-    margin-top: 15px;
-    color: #7a7a7a;
-    font-size: 18px;
-    text-decoration: underline;
 }
 
 .cantidad-grupo{
@@ -608,7 +655,7 @@ nav{
 .btn-cant{
     background: transparent;
     border: none;
-    font-size: 22px;
+    font-size:clamp(1.2rem,2vw,1.4rem);
     font-weight: bold;
     cursor: pointer;
     padding: 0px 12px;
@@ -623,7 +670,7 @@ nav{
 
 #numero-cantidad{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 24px;
+    font-size:clamp(1.2rem,2vw,1.5rem);
     min-width: 25px;
     text-align: center;
     color: #000;
@@ -797,83 +844,81 @@ nav{
 
 @media (max-width: 778px){
 
-    html, body{
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-
     .header-content{
-        padding: 10px 15px;
-        width: 100%;
-    }
-
-    .header-content h1{
-        padding-left: 30px;
-    }
+    padding: 10px 15px;
+}
 
     .header-content img{
         width: 69px;
         padding: 5px;
     }
 
+    .header-icons{
+        right: 15px;
+        font-size: 28px;
+    }
+
+    #contador-carrito{
+        font-size: 13px;
+        padding: 2px 7px;
+    }
+
     .hero-banner{
-        max-height: 85px;
+        height: clamp(110px, 24vw, 180px);
     }
 
     .hero-banner img{
-        height: 10vh;
-        width: 100%;
-        background-size: contain;
-        background-position: center top;
-        background-repeat: no-repeat;
+        object-position: center;
     }
 
     .footer-content{
-        justify-content: center;
-        align-items: center;
+        padding:0 20px 40px;
+        align-items:center;
     }
 
-    .nav-footer ul{
-        gap: 10px;
-    } 
-    
-    .nav-footer a{
-        gap: 8px;
-        font-size: 18px;
+    .footer-top{
+        flex-direction:column;
+        gap:25px;
     }
 
     .footer-logo-wrapper{
-        top: 50px;
-        left: 20px;
+        position:static;
     }
 
     .footer-logo-wrapper img{
-        width: 80px;
+        width:90px;
+    }
+
+    .nav-footer ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .item-footer{
+        font-size:clamp(1rem,4vw,1.3rem);
     }
 
     .linea-footer{
-        width: 60%;
-        left: 40px;
-    }
-
-    .social-icons{
-        margin-top: 20px;
-        gap: 10px;
-    }
-
-    .social-icons a i{
-        font-size: 20px;
-    }
-    
-    .copyright{
-        font-size: 8px;
-        padding-left: 0px;
+        width:90%;
+        margin:20px auto;
     }
 
     .footer-bottom{
-        display: flex;
-        flex-direction: column;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .copyright{
+        padding-left:0;
+        font-size:.8rem;
+        text-align:center;
+        line-height:1.5;
+    }
+
+    .social-icons{
+        justify-content:center;
+        flex-wrap:wrap;
     }
 
     .btn-subir{
@@ -888,19 +933,7 @@ nav{
         font-size: 28px;
     }
 
-    .remeras-content h1{
-        font-size: 50px;
-    }
-    
-    .hoodies-content h1{
-        font-size: 50px;
-    }
-
-    .accesorios-content h1{
-        font-size: 50px;
-    }
-
-    .nav-arrows a{
+    .nav-arrows {
         display: none;
     }
 

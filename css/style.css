@@ -10,11 +10,27 @@ html{
     scroll-behavior: smooth;
 }
 
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+:root{
+    --color-principal:#f1297c;
+    --color-oscuro:#262525;
+    --color-gris:#333333;
+    --color-claro:#d1d3dd;
+
+    --radius:12px;
+    --transition:.3s ease;
+}
+
 /* HEADER */
 
 .container{
-    width: 90%;
-    margin: 0 auto;
+    width: min(90%, 1400px);
+    margin-inline: auto;
 }
 
 .header{
@@ -35,7 +51,7 @@ html{
 }
 
 .logo-container img{
-    width: 140px;
+    width: clamp(90px, 10vw, 140px);
     height: auto;
     padding: 10px 10px;
 }
@@ -52,14 +68,14 @@ html{
 .nav ul{
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: clamp(1rem, 2vw, 2.5rem);
 }
 
 .nav a{
     color: white;
     text-decoration: none;
     font-weight: bold;
-    font-size: 35px;
+    font-size: clamp(1.2rem, 2vw, 2rem);
     display: inline-block;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
@@ -104,11 +120,13 @@ html{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 0 80px;
     align-items: center;
+
+    padding:  clamp(2rem, 5vw, 3rem) 1rem;
+
     position: relative;
-    transition: 0.6s;
-    margin-bottom: 80px;
+    transition: box-shadow .6s;
+    margin-bottom: clamp(3rem, 8vw, 5rem);
 }
 
 .video-banda-container:hover{
@@ -118,8 +136,7 @@ html{
 }
 
 .video-banda-box{
-    width: 100%;
-    max-width: 1000px;
+    width: min(100%, 1000px);
     aspect-ratio: 16/9;
     background: #000000;
     border: 2px solid #555;
@@ -136,9 +153,10 @@ html{
 .video-banda-container .banda-titulo{
     font-family: 'Bebas Neue';
     color: white;
-    font-size: 60px;
+    font-size: clamp(2.5rem, 6vw, 3.75rem);
     margin-bottom: 20px;
     letter-spacing: 4px;
+    text-align: center;
 }
 
 .banda-section .banda-details{
@@ -151,9 +169,9 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     flex-wrap: wrap;
-    min-height: 70vh;
+    gap: 20px;
+    
     padding: 40px 10px;
 
     width: 100%;
@@ -168,13 +186,14 @@ html{
 }
 
 .card-item .face{
+    display: block;
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    transition: 0.8s;
+    transition: transform .8s;
     top: 0;
     left: 0;
 }
@@ -184,6 +203,7 @@ html{
 }
 
 .card-item .card-front img{
+    display: block;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -191,6 +211,7 @@ html{
 }
 
 .card-item .card-back img{
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -225,7 +246,7 @@ html{
 
 .card-icons a{
     color: white;
-    font-size: 38px;
+    font-size: clamp(1.5rem,3vw,2.4rem);
     text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -243,34 +264,55 @@ html{
     transform: perspective(600px) rotateY(360deg);
 }
 
+/* NEWSONG */
+
+.banner-newsong{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: black;
+    line-height: 0;
+    display: block;
+    position: relative;
+}
+
+.banner-newsong img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 /* 3D NEW SONG */
 
 .newsong-section{
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, #d1d3dd 100%);
-    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .container-newsong{
     position: relative;
     width: 100%;
     height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
+    padding-bottom: clamp(3rem,8vw,9rem);
 }
 
 .newsong-titulo{
 
-    margin-top: 80px;
+    margin-top: clamp(2rem,6vw,5rem);
     font-family: 'Bebas Neue';
     color: rgb(0, 0, 0);
-    font-size: 150px;
-    margin-bottom: 20px;
-    letter-spacing: 4px;
+    font-size: clamp(3rem,10vw,9rem);
+    letter-spacing: clamp(2px,4vw,4px);
+    margin-bottom: clamp(1rem,3vw,2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-
-    transition: color 0.6s ease;
+    transition: color .6s;
 }
 
 .container-newsong:hover .newsong-titulo{
@@ -285,8 +327,7 @@ html{
 }
 
 .newvideo-wrapper{
-    width: 100%;
-    max-width: 900px;
+    width: clamp(280px, 85vw, 900px);
     aspect-ratio: 16/9;
     background: #000000;
     border: 2px solid #555;
@@ -326,20 +367,19 @@ html{
 }
 
 .ep-main-logo img{
-    width: 250px;
+    width: clamp(160px, 30vw, 250px);
     height: auto;
     border-radius: 12px;
     box-shadow: 0 20px 30px rgba(0,0,0,0.6);
 }
 
 .tracklist-container{
-    align-items: center;
-    flex-direction: column;
     display:flex;
-    gap: 40px;
-    width: 100%;
-    max-width: 700px;
+    flex-direction: column;
+    gap: 2rem;
+    width: min(100%, 700px);
     margin: 0 auto;
+    padding-inline: 1rem;
 }
 
 .track-item{
@@ -349,7 +389,7 @@ html{
     align-items: center;
     background-color: #333333;
     color: white;
-    padding: 10px;
+    padding: 1rem;
     border-radius: 15px;
     width: 100%;
     transition: 0.3s ease;
@@ -373,15 +413,14 @@ html{
 }
 
 .track-info img{
-    width: 70px;
-    height: auto;
+    width:clamp(50px,12vw,70px);
     border-radius: 12px;
 }
 
 .track-play-icon{
-    width: 60px;
-    font-size: 50px;
-    margin-right: 10px;
+    width: auto;
+    font-size:clamp(2rem,6vw,3rem);
+    margin-right: 0;
 }
 
 .track-details{
@@ -390,18 +429,16 @@ html{
 }
 
 .track-info h3{
-    font-size: 20px;
-    font-weight: bold; 
+    font-size:clamp(1rem,2.5vw,1.25rem);
 }
 
-.track-info .track-artist{
-    font-size: 15px;
-    font-weight: normal;
+.track-artist{
+    font-size:clamp(.8rem,2vw,.95rem);
     color: #ccc;
 }
 
-.track-info .track-duration{
-    font-size: 16px;
+.track-duration{
+    font-size:clamp(.8rem,2vw,1rem);
     margin-top: 8px;
     color: #999;
 }
@@ -439,11 +476,11 @@ html{
     background-color: #333333;
     padding: 80px 10%;
     align-items: center;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    gap: 10px;
+    gap: 40px;
     scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: auto;
 }
 
 .videos-slider::-webkit-scrollbar {
@@ -463,12 +500,16 @@ html{
 }
 
 .video-card{
-    flex: 0 0 80%;
+    flex: 0 0 min(80%, 900px);
     display: flex;
     align-items: center;
     scroll-snap-align: center;
     flex-direction: column;
-    transition: transform 0.3s;
+    transition: 0.35s;
+}
+
+.video-card:hover{
+    transform: scale(1.03);
 }
 
 .video-wrapper{
@@ -490,7 +531,8 @@ html{
 .video-card h3{
     font-family: 'Bodoni FLF', serif;
     color: white;
-    font-size: 20px;
+    font-size:clamp(1rem,3vw,1.3rem);
+    text-align:center;
     margin-top: 15px;
     text-transform: uppercase;
 }
@@ -544,10 +586,10 @@ html{
     display: flex;
     flex-direction: row;
     width: 100%;
-    gap: 80px;
+    gap:clamp(2rem,5vw,5rem);
     justify-content: center;
     align-items: center;
-    max-width: 700px;
+    max-width: 1100px;
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 40px;
@@ -579,23 +621,26 @@ html{
     background: #262525;
     color: white;
     text-decoration: none;
-    padding: 20px;
+    padding:1rem;
     font-weight: bold;
     text-transform: uppercase;
     width: 100%;
     border-radius: 10px;
     display: inline-block;
     margin-top: 20px;
-    transition: 0.4s;
+    transition:
+        transform .4s,
+        box-shadow .4s;
 }
 
 .merch-item:hover{
-    transform: scale(1.1);
-    box-shadow: 0px 20px 40px rgba(0,0,0,0.8);
+    transform:translateY(-10px);
+    box-shadow: 0px 20px 40px hsla(0, 0%, 0%, 0.8);
 }
 
 .merch-item img{
-    width: 300px;
+    width:100%;
+    max-width:260px;
     height: auto;
 }
 
@@ -604,7 +649,7 @@ html{
 }
 
 .linea-horizontal{
-    width: 40%;
+    width:min(500px,70%);
     height: 5px;
     background-color: #f1297c;
     margin: 80px;
@@ -645,7 +690,7 @@ html{
 .preescena-content h1{
     font-family: 'Bebas Neue', sans-serif;
     color: white;
-    font-size: 80px;
+    font-size: clamp(2.5rem, 8vw, 5rem);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     text-align: center;
     margin: 0;
@@ -655,10 +700,10 @@ html{
     background: #262525;
     color: white;
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 30px;
+    font-size:clamp(1.2rem,3vw,1.9rem);
     font-weight: bold;
+    padding:1rem 2rem;
     text-transform: uppercase;
-    padding: 20px 40px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -671,7 +716,7 @@ html{
 }
 
 .preescena-content:hover img{
-    transform: scale(1.1);
+    transform: scale(1.05);
     filter: brightness(40%);
 }
 
@@ -749,12 +794,13 @@ html{
     background: linear-gradient(to bottom, #fefeff, #b0b0b0);
     width: 90%;
     max-width: 500px;
-    padding: 30px;
+    padding:clamp(1rem,3vw,2rem);
     border-radius: 20px;
     position: relative;
     max-height: 85vh;
     display: flex;
     flex-direction: column;
+    overflow:hidden;
 }
 
 .spotify-embed{
@@ -762,22 +808,25 @@ html{
 }
 
 .close-modal{
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 30px;
+    display: flex;
+    justify-content: end;
+    top: 1rem;
+    right: 1rem;
+    font-size:clamp(1.8rem,5vw,2rem);
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    line-height: 1rem;
     color: #333333;
+    transition: color 0.3s ease;
 }
 
 .lyrics-container{
-    margin-top: 20px;
-    text-align: center;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    flex:1;
+    min-height:0;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 .lyrics-container h3{
@@ -785,24 +834,26 @@ html{
     color: #444;
     font-weight: normal;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size:clamp(1.1rem,3vw,1.4rem);
 }
+
+.lyrics-scroll{
+    flex:1;
+    overflow-y:auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: #8a8a8a #ababab;
+    overscroll-behavior: contain;
+}
+
 
 .lyrics-scroll p{
     text-align: left;
     margin-bottom: 15px;
     font-family: 'Franklin Gothic';
-    font-size: 16px;
+    font-size:clamp(.95rem,2vw,1rem);
     color: #444;
     line-height: 1.6;
-}
-
-.lyrics-scroll{
-    overflow-y: auto;
-    padding-right: 10px;
-    line-height: 4px;
-    scrollbar-width: thin;
-    scrollbar-color: #8a8a8a #ababab;
 }
 
 .lyrics-scroll::-webkit-scrollbar {
@@ -1027,6 +1078,187 @@ html{
     transform: translateY(-3px);
 }
 
+/* CONTACTO */
+
+.formulario-contacto-section{
+    padding: 80px 20px;
+    background-color: #121212;
+    display: flex;
+    font-family: 'Bebas Neue', sans-serif;
+    justify-content: center;
+}
+
+.contacto-contenedor{
+    width: 100%;
+    max-width: 540px;
+    background: #363535;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #737272;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.contacto-encabezado{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.contacto-encabezado h2{
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contacto-encabezado p{
+    color: #b3b3b3;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.control-formulario{
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.control-formulario label{
+    color: #fff;
+    font-size: 0.98rem;
+    margin-top: 10px;
+    margin-bottom: 9px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.control-formulario input,
+.control-formulario textarea{
+    font-family: "Playfair Display";
+    font-size: 15px;
+    font-weight: bold;
+    border-color: rgba(0,0,0,0);
+    border-radius: 8px;
+    padding: 10px 5px;
+}
+
+.control-formulario input:focus,
+.control-formulario textarea:focus{
+    outline: none;
+    border-color: #f1297c;
+    box-shadow: 0 0 8px rgba(255, 147, 192, 0.50);
+}
+
+.control-formulario textarea{
+    resize: vertical;
+}
+
+.formulario-acciones{
+    margin-top: 40px;
+}
+
+.formulario-acciones .btn-principal{
+    width: 100%;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.formulario-acciones .btn-principal:hover{
+    background-color: #f1297c;
+    transform: scale(1.05);
+}
+
+.error-msg.hidden{
+    display: none;
+}
+
+.error-msg{
+    color: #ff1265;
+    font-size: 0.9rem;
+    margin-top: 6px;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.control-formulario input.input-error,
+.control-formulario textarea.input-error{
+    border-color: #c30749;
+    box-shadow: 0 0 6pc rgba(255, 74, 74, 0.2);
+
+}
+
+.modal-overlay-contacto{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-cartel{
+    width: 100%;
+    font-family: 'Playfair Display', sans-serif;
+    text-align: center;
+    max-width: 550px;
+    min-height: 450px;
+    background: linear-gradient(to bottom, #262525, #585757);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #737272;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+.modal-cartel h2{
+    margin-bottom: 10px;
+}
+
+.modal-cartel p{
+    color: #b3b3b3; 
+    margin-bottom: 20px; 
+    font-family: 'Playfair Display', sans-serif; 
+    font-size: 1.25rem;
+}
+
+.modal-img img{
+    width: 450px;
+    margin-bottom: 15px;
+}
+
+.btn-modal-cerrar{
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 18px;
+    background-color: #333333;
+    padding: 20px 40px;
+    border-radius: 12px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.btn-modal-cerrar:hover{
+    background-color: #f1297c;
+    transform: scale(1.1);
+}
+
 /* FOOTER */
 
 .footer{
@@ -1083,7 +1315,7 @@ html{
     color: white;
     text-decoration: none;
     font-family: 'Bebas Neue';
-    font-size: 28px;
+    font-size:clamp(1rem,4vw,1.3rem);
     letter-spacing: 1px;
     transition: 0.3s;
 }
@@ -1147,6 +1379,26 @@ html{
     display: none;
 }
 
+/* Notebook */
+@media (max-width: 1200px){
+
+}
+
+/* Tablet */
+@media (max-width: 900px){
+
+    .object:nth-of-type(6),
+    .object:nth-of-type(7),
+    .object:nth-of-type(8),
+    .object:nth-of-type(9),
+    .object:nth-of-type(10),
+    .object:nth-of-type(11){
+        display:none;
+    }
+
+}
+
+/*celulares  */
 @media (max-width: 778px){
 
     html, body{
@@ -1175,32 +1427,30 @@ html{
         background-color: #ffffff;
     }
 
+    .newvideo-wrapper{
+        width: min(85%, 450px);
+    }
+
     .banda-section{
-        padding: 40px 0;
-        width: 100%;
+        padding: 2rem 0;
     }
 
-    .video-banda-container.banda-titulo{
-        font-size: 32px;
-        letter-spacing: 2px;
-        margin-bottom: 20px;
-        text-align: center;
+    .object{
+        display:none;
     }
-
+    
     .video-banda-container{
-        padding: 20px 15px;
-        margin-bottom: 40px;
+        padding: 1.5rem 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .video-banda-container .banda-titulo{
+        font-size:clamp(2rem,7vw,2.5rem);
+        margin-bottom: 1rem;
     }
 
     .video-banda-box{
-        width: 95%;
-        max-width: 100%;
-        border-radius: 6px;
-    }
-
-    .banda-section .banda-details{
-        font-size: 45px;
-        text-align: center;
+        width: min(90%, 500px);
     }
 
     .merch-section{
@@ -1245,58 +1495,66 @@ html{
 
     .videos-content .texto-dispositivos-video{
         display: block;
+        margin-top:20px;
+        letter-spacing:1px;
     }
 
     .video-wrapper{
-        width: 420px;
+        width:min(90vw,420px);
+    }
+
+    .video-slider{
+        padding:2rem 1rem;
     }
 
     .footer-content{
-        justify-content: center;
-        align-items: center;
-        padding-bottom: 60px;
+        padding:0 20px 40px;
+        align-items:center;
     }
 
-    .nav-footer ul{
-        gap: 10px;
-    } 
-    
-    .nav-footer a{
-        gap: 8px;
-        font-size: 18px;
+    .footer-top{
+        flex-direction:column;
+        gap:25px;
     }
 
     .footer-logo-wrapper{
-        top: 50px;
-        left: 20px;
+        position:static;
     }
 
     .footer-logo-wrapper img{
-        width: 80px;
+        width:90px;
+    }
+
+    .nav-footer ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .item-footer{
+        font-size:clamp(1rem,4vw,1.3rem);
     }
 
     .linea-footer{
-        width: 60%;
-        left: 40px;
-    }
-
-    .social-icons{
-        margin-top: 20px;
-        gap: 10px;
-    }
-
-    .social-icons a i{
-        font-size: 20px;
-    }
-    
-    .copyright{
-        font-size: 8px;
-        padding-left: 0px;
+        width:90%;
+        margin:20px auto;
     }
 
     .footer-bottom{
-        display: flex;
-        flex-direction: column;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .copyright{
+        padding-left:0;
+        font-size:.8rem;
+        text-align:center;
+        line-height:1.5;
+    }
+
+    .social-icons{
+        justify-content:center;
+        flex-wrap:wrap;
     }
 
     .btn-subir{
@@ -1359,6 +1617,71 @@ html{
         top: 0;
         left: 0;
         z-index: 9;
+    }
+
+    .preescena-content{
+        height:65vh;
+    }
+
+    .formulario-contacto-section{
+    padding:50px 15px;
+    }
+
+    .contacto-contenedor{
+        padding:25px 20px;
+        max-width:100%;
+    }
+
+    .contacto-encabezado h2{
+        font-size:clamp(1.8rem,6vw,2rem);
+    }
+
+    .contacto-encabezado p{
+        font-size:.95rem;
+    }
+
+    .control-formulario input,
+    .control-formulario textarea{
+        width:100%;
+        box-sizing:border-box;
+    }
+
+    .formulario-acciones .btn-principal{
+        padding:16px;
+    }
+
+    .modal-cartel{
+        width:90%;
+        max-width:500px;
+        min-height:auto;
+        padding:25px;
+    }
+
+    .modal-img img{
+        width:100%;
+        max-width:320px;
+        height:auto;
+    }
+
+    .btn-modal-cerrar{
+        width:100%;
+        padding:16px;
+    }
+
+}
+
+@media (max-width:600px){
+
+    .track-item{
+        padding:1rem;
+    }
+
+    .track-info{
+        gap:1rem;
+    }
+
+    .track-play-icon{
+        font-size:2.2rem;
     }
 
 }
