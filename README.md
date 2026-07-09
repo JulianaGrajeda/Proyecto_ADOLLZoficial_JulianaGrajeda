@@ -12,8 +12,10 @@
 - **Tutora**: Érica Sosa | erica.sosa@bue.edu.ar
 ## ⚙️ Información del Proyecto
 ### Descripción
-Este proyecto es una página web para el grupo musical argentino "Adollz". Este sitio fue pensado y desarrollado desde cero en busca de ser un espacio
-interactivo donde los fanáticos puedan acceder al contenido oficial de la banda.
+Este proyecto consiste en una página web oficial para el grupo musical argentino Adollz. Fue diseñada 
+y desarrollada desde cero como una experiencia interactiva para los fanáticos, permitiendo explorar el 
+contenido de la banda, acceder a sus redes, conocer su discografía y navegar por una tienda de merchandising 
+completamente funcional.
 
 ### Concept del diseño de la página
 
@@ -33,7 +35,8 @@ interactivo donde los fanáticos puedan acceder al contenido oficial de la banda
 
 ![Imagen de la sección videos de la página](assets/discografia.png)
 
-- **Tienda(Merch):** Una sección de Merchandising exclusivo diseñado y desarrollado por mi para simular la experiencia de una tienda oficial de la banda.
+- **Tienda(Merch):** Una tienda interactiva desarrollada con JavaScript que permite seleccionar variantes de cada producto,
+- administrar un carrito de compras persistente y visualizar un resumen dinámico de la compra.
 
 ![Imagen de la sección merch de la página principal](assets/merchsection.png)
 
@@ -46,4 +49,9 @@ interactivo donde los fanáticos puedan acceder al contenido oficial de la banda
 
 ## 🛠️ Tecnologías Utilizadas
 - HTML5
-- CSS
+- CSS3
+- JavaScript (ES6)
+- JSON (catálogo de productos)
+- LocalStorage (persistencia del carrito)
+- Font Awesome
+- Google Fonts
