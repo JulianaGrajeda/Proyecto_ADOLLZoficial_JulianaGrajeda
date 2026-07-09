@@ -304,17 +304,17 @@ body{
 }
 
 .item-meta-grupo{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    align-items:center;
 }
 
 .item-meta{
     
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 1px;
-    font-size: 18px;
+    font-size:clamp(1rem,4vw,1.2rem);
     color: #333333;
     font-weight: bold;
 }
@@ -322,7 +322,7 @@ body{
 .item-meta-desc{
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 1px;
-    font-size: 16px;
+    font-size:clamp(.9rem,3.8vw,1rem);
     color: #7a7a7a;
     font-weight: bold;
     margin-bottom: 10px;
@@ -338,9 +338,65 @@ body{
 
 .item-precio{
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 30px;
+    font-size:clamp(1.6rem,6vw,2rem);
     font-weight: bold;
     color: #f1297c;
+}
+
+.item-cantidad{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.cantidad-fila{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.cantidad-control{
+    display:flex;
+    align-items:center;
+    background:#e2e2e7;
+    border-radius:12px;
+}
+
+.btn-cantidad-restar,
+.btn-cantidad-sumar{
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:22px;
+    padding:4px 12px;
+    font-family:'Bebas Neue';
+}
+
+.cantidad-numero{
+    min-width:22px;
+    text-align:center;
+    font-family:'Bebas Neue';
+    font-size:22px;
+}
+
+.cantidad-numero.limite-alcanzado{
+    color: #f1297c;
+    font-weight: bold;
+    transition: color .3s ease;
+}
+
+.msg-limite{
+    display:block;
+    margin-top:8px;
+    color:#f1297c;
+    font-family:'Bebas Neue', sans-serif;
+    font-size:15px;
+    letter-spacing:1px;
+}
+
+.btn-cantidad-sumar.deshabilitado{
+    opacity: .4;
+    cursor: not-allowed;
 }
 
 .btn-eliminar{
@@ -729,6 +785,43 @@ body{
 
     .resumen-container{
         margin-top: 30px;
+        position:static;
+
+    }
+
+    .item-carrito{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .item-img{
+        width: 100%;
+        max-width: 180px;
+        align-self: center;
+    }
+
+    .item-detalles h3{
+        font-size: clamp(1.6rem,6vw,2rem);
+        text-align:center;
+    }
+
+    .item-detalles{
+        width:100%;
+    }
+
+    .item-meta-grupo{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .item-precio-eliminar{
+        width:100%;
+        flex-direction:row;
+        justify-content:space-between;
+        align-items:center;
+        height:auto;
     }
 
 }

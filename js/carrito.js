@@ -30,7 +30,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="item-meta-grupo">
                         <p class="item-meta">COLOR: ${item.color.toUpperCase()}</p>
                         <p class="item-meta">TALLE: ${item.talle}</p>
-                        <p class="item-meta">CANTIDAD: ${item.cantidad}</p>
+                        <div class="item-cantidad">
+                            <div class="cantidad-fila">
+                                <p class="item-meta">CANTIDAD:</p>
+
+                                <div class="cantidad-control">
+                                    <button class="btn-cantidad-restar" data-index="${index}">-</button>
+
+                                    <span class="cantidad-numero ${item.cantidad === 5 ? 'limite-alcanzado' : ''}">
+                                        ${item.cantidad}
+                                    </span>
+
+                                    <button
+                                        class="btn-cantidad-sumar ${item.cantidad === 5 ? 'deshabilitado' : ''}"
+                                        data-index="${index}">
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        ${
+                            item.cantidad === 5
+                            ? `<span class="msg-limite">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    Máximo permitido: 5 unidades por producto.
+                                </span>`
+                            : ""
+                        }
+
                     </div>
                 </div>
                 <div class="item-precio-eliminar">
@@ -43,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         actualizarResumen(subtotal);
         configurarBotonesEliminar();
+        configurarBotonesCantidad();
     }
 
     function actualizarResumen(subtotal){
@@ -92,6 +121,61 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderizarCarrito();
             });
         });
+    }
+
+    function configurarBotonesCantidad(){
+        const botonesMas = document.querySelectorAll('.btn-cantidad-sumar');
+        const botonesMenos = document.querySelectorAll('.btn-cantidad-restar');
+
+        botonesMas.forEach(boton => {
+            boton.addEventListener('click', (e) => {
+
+                const index = e.currentTarget.dataset.index;
+
+                let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+                if(carrito[index].cantidad < 5){
+
+                    carrito[index].cantidad++;
+
+                    localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                    actualizarContadorCarrito();
+                    renderizarCarrito();
+
+                }
+
+            });
+
+        });
+
+        botonesMenos.forEach(boton => {
+
+            boton.addEventListener('click', (e) => {
+
+                const index = e.currentTarget.dataset.index;
+
+                let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+                if(carrito[index].cantidad > 1){
+
+                    carrito[index].cantidad--;
+
+                }else{
+
+                    carrito.splice(index,1);
+
+                }
+
+                localStorage.setItem("carrito", JSON.stringify(carrito));
+
+                actualizarContadorCarrito();
+                renderizarCarrito();
+
+            });
+
+        });
+
     }
 
     renderizarCarrito();
